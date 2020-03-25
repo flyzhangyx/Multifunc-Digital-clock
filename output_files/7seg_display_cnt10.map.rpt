@@ -1,0 +1,868 @@
+Analysis & Synthesis report for 7seg_display_cnt10
+Sun Jun 17 22:34:44 2018
+Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Inverted Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Parameter Settings for User Entity Instance: music1:inst30|74151:inst3
+ 12. Parameter Settings for User Entity Instance: music1:inst30|74151:inst4
+ 13. Parameter Settings for User Entity Instance: music1:inst30|74151:inst2
+ 14. Parameter Settings for User Entity Instance: music1:inst30|74151:inst5
+ 15. Parameter Settings for User Entity Instance: music1:inst30|74151:inst7
+ 16. Parameter Settings for User Entity Instance: music1:inst30|74151:inst6
+ 17. Parameter Settings for User Entity Instance: music1:inst30|74151:inst8
+ 18. Parameter Settings for User Entity Instance: music1:inst30|74151:inst9
+ 19. Parameter Settings for User Entity Instance: display:inst16|seg_select:inst2|select1bit:inst4|74151:inst
+ 20. Parameter Settings for User Entity Instance: display:inst16|seg_select:inst2|select1bit:inst3|74151:inst
+ 21. Parameter Settings for User Entity Instance: display:inst16|seg_select:inst2|select1bit:inst1|74151:inst
+ 22. Parameter Settings for User Entity Instance: display:inst16|seg_select:inst2|select1bit:inst2|74151:inst
+ 23. Parameter Settings for User Entity Instance: display:inst5|seg_select:inst2|select1bit:inst4|74151:inst
+ 24. Parameter Settings for User Entity Instance: display:inst5|seg_select:inst2|select1bit:inst3|74151:inst
+ 25. Parameter Settings for User Entity Instance: display:inst5|seg_select:inst2|select1bit:inst1|74151:inst
+ 26. Parameter Settings for User Entity Instance: display:inst5|seg_select:inst2|select1bit:inst2|74151:inst
+ 27. Elapsed Time Per Partition
+ 28. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sun Jun 17 22:34:44 2018       ;
+; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Full Version ;
+; Revision Name                      ; 7seg_display_cnt10                          ;
+; Top-level Entity Name              ; clock                                       ;
+; Family                             ; Cyclone III                                 ;
+; Total logic elements               ; 591                                         ;
+;     Total combinational functions  ; 489                                         ;
+;     Dedicated logic registers      ; 365                                         ;
+; Total registers                    ; 365                                         ;
+; Total pins                         ; 30                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP3C16Q240C8       ;                    ;
+; Top-level entity name                                                      ; clock              ; 7seg_display_cnt10 ;
+; Family name                                                                ; Cyclone III        ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ; < 0.1%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                          ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                ; Library ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------+---------+
+; m200.bdf                         ; yes             ; User Block Diagram/Schematic File  ; C:/Users/HASEE/Desktop/FPGAt/m200.bdf                       ;         ;
+; Do.bdf                           ; yes             ; User Block Diagram/Schematic File  ; C:/Users/HASEE/Desktop/FPGAt/Do.bdf                         ;         ;
+; music1.bdf                       ; yes             ; User Block Diagram/Schematic File  ; C:/Users/HASEE/Desktop/FPGAt/music1.bdf                     ;         ;
+; Sol.bdf                          ; yes             ; User Block Diagram/Schematic File  ; C:/Users/HASEE/Desktop/FPGAt/Sol.bdf                        ;         ;
+; Re.bdf                           ; yes             ; User Block Diagram/Schematic File  ; C:/Users/HASEE/Desktop/FPGAt/Re.bdf                         ;         ;
+; Mi.bdf                           ; yes             ; User Block Diagram/Schematic File  ; C:/Users/HASEE/Desktop/FPGAt/Mi.bdf                         ;         ;
+; La.bdf                           ; yes             ; User Block Diagram/Schematic File  ; C:/Users/HASEE/Desktop/FPGAt/La.bdf                         ;         ;
+; Fa.bdf                           ; yes             ; User Block Diagram/Schematic File  ; C:/Users/HASEE/Desktop/FPGAt/Fa.bdf                         ;         ;
+; clock.bdf                        ; yes             ; User Block Diagram/Schematic File  ; C:/Users/HASEE/Desktop/FPGAt/clock.bdf                      ;         ;
+; cnt60.bdf                        ; yes             ; User Block Diagram/Schematic File  ; C:/Users/HASEE/Desktop/FPGAt/cnt60.bdf                      ;         ;
+; switchlll.bdf                    ; yes             ; User Block Diagram/Schematic File  ; C:/Users/HASEE/Desktop/FPGAt/switchlll.bdf                  ;         ;
+; seg_select.bdf                   ; yes             ; User Block Diagram/Schematic File  ; C:/Users/HASEE/Desktop/FPGAt/seg_select.bdf                 ;         ;
+; debonce.bdf                      ; yes             ; User Block Diagram/Schematic File  ; C:/Users/HASEE/Desktop/FPGAt/debonce.bdf                    ;         ;
+; cntall.bdf                       ; yes             ; User Block Diagram/Schematic File  ; C:/Users/HASEE/Desktop/FPGAt/cntall.bdf                     ;         ;
+; m100.bdf                         ; yes             ; User Block Diagram/Schematic File  ; C:/Users/HASEE/Desktop/FPGAt/m100.bdf                       ;         ;
+; fre_div.bdf                      ; yes             ; User Block Diagram/Schematic File  ; C:/Users/HASEE/Desktop/FPGAt/fre_div.bdf                    ;         ;
+; decoder.bdf                      ; yes             ; User Block Diagram/Schematic File  ; C:/Users/HASEE/Desktop/FPGAt/decoder.bdf                    ;         ;
+; dig_select.bdf                   ; yes             ; User Block Diagram/Schematic File  ; C:/Users/HASEE/Desktop/FPGAt/dig_select.bdf                 ;         ;
+; select1bit.bdf                   ; yes             ; User Block Diagram/Schematic File  ; C:/Users/HASEE/Desktop/FPGAt/select1bit.bdf                 ;         ;
+; display.bdf                      ; yes             ; User Block Diagram/Schematic File  ; C:/Users/HASEE/Desktop/FPGAt/display.bdf                    ;         ;
+; timealarm.bdf                    ; yes             ; User Block Diagram/Schematic File  ; C:/Users/HASEE/Desktop/FPGAt/timealarm.bdf                  ;         ;
+; timedelay.bdf                    ; yes             ; User Block Diagram/Schematic File  ; C:/Users/HASEE/Desktop/FPGAt/timedelay.bdf                  ;         ;
+; cnt8.bdf                         ; yes             ; User Block Diagram/Schematic File  ; C:/Users/HASEE/Desktop/FPGAt/cnt8.bdf                       ;         ;
+; choose.bdf                       ; yes             ; User Block Diagram/Schematic File  ; C:/Users/HASEE/Desktop/FPGAt/choose.bdf                     ;         ;
+; chooseseg.bdf                    ; yes             ; User Block Diagram/Schematic File  ; C:/Users/HASEE/Desktop/FPGAt/chooseseg.bdf                  ;         ;
+; move.bdf                         ; yes             ; User Block Diagram/Schematic File  ; C:/Users/HASEE/Desktop/FPGAt/move.bdf                       ;         ;
+; alarmcntall.bdf                  ; yes             ; User Block Diagram/Schematic File  ; C:/Users/HASEE/Desktop/FPGAt/alarmcntall.bdf                ;         ;
+; alarnswitch.bdf                  ; yes             ; User Block Diagram/Schematic File  ; C:/Users/HASEE/Desktop/FPGAt/alarnswitch.bdf                ;         ;
+; boom.bdf                         ; yes             ; User Block Diagram/Schematic File  ; C:/Users/HASEE/Desktop/FPGAt/boom.bdf                       ;         ;
+; ishenggang.bdf                   ; yes             ; User Block Diagram/Schematic File  ; C:/Users/HASEE/Desktop/FPGAt/ishenggang.bdf                 ;         ;
+; 7474.bdf                         ; yes             ; Megafunction                       ; c:/altera/13.1/quartus/libraries/others/maxplus2/7474.bdf   ;         ;
+; 74390.bdf                        ; yes             ; Megafunction                       ; c:/altera/13.1/quartus/libraries/others/maxplus2/74390.bdf  ;         ;
+; 74194.bdf                        ; yes             ; Megafunction                       ; c:/altera/13.1/quartus/libraries/others/maxplus2/74194.bdf  ;         ;
+; 74151.tdf                        ; yes             ; Megafunction                       ; c:/altera/13.1/quartus/libraries/others/maxplus2/74151.tdf  ;         ;
+; aglobal.inc                      ; yes             ; Megafunction                       ; c:/altera/13.1/quartus/libraries/megafunctions/aglobal.inc  ;         ;
+; f74151.bdf                       ; yes             ; Megafunction                       ; c:/altera/13.1/quartus/libraries/others/maxplus2/f74151.bdf ;         ;
+; 74138.bdf                        ; yes             ; Megafunction                       ; c:/altera/13.1/quartus/libraries/others/maxplus2/74138.bdf  ;         ;
+; 7448.bdf                         ; yes             ; Megafunction                       ; c:/altera/13.1/quartus/libraries/others/maxplus2/7448.bdf   ;         ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                 ;
++---------------------------------------------+-------------------------------+
+; Resource                                    ; Usage                         ;
++---------------------------------------------+-------------------------------+
+; Estimated Total logic elements              ; 591                           ;
+;                                             ;                               ;
+; Total combinational functions               ; 489                           ;
+; Logic element usage by number of LUT inputs ;                               ;
+;     -- 4 input functions                    ; 105                           ;
+;     -- 3 input functions                    ; 102                           ;
+;     -- <=2 input functions                  ; 282                           ;
+;                                             ;                               ;
+; Logic elements by mode                      ;                               ;
+;     -- normal mode                          ; 489                           ;
+;     -- arithmetic mode                      ; 0                             ;
+;                                             ;                               ;
+; Total registers                             ; 365                           ;
+;     -- Dedicated logic registers            ; 365                           ;
+;     -- I/O registers                        ; 0                             ;
+;                                             ;                               ;
+; I/O pins                                    ; 30                            ;
+; Embedded Multiplier 9-bit elements          ; 0                             ;
+; Maximum fan-out node                        ; fre_div:inst888|74390:inst1|7 ;
+; Maximum fan-out                             ; 79                            ;
+; Total fan-out                               ; 2101                          ;
+; Average fan-out                             ; 2.30                          ;
++---------------------------------------------+-------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                    ;
++-----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node  ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                           ; Library Name ;
++-----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------+--------------+
+; |clock                      ; 489 (3)           ; 365 (0)      ; 0           ; 0            ; 0       ; 0         ; 30   ; 0            ; |clock                                                                        ; work         ;
+;    |alarmcntall:inst27|     ; 40 (8)            ; 27 (3)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|alarmcntall:inst27                                                     ; work         ;
+;       |74390:inst11|        ; 10 (10)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|alarmcntall:inst27|74390:inst11                                        ; work         ;
+;       |74390:inst7|         ; 11 (11)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|alarmcntall:inst27|74390:inst7                                         ; work         ;
+;       |74390:inst|          ; 11 (11)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|alarmcntall:inst27|74390:inst                                          ; work         ;
+;    |alarnswitch:inst15|     ; 7 (3)             ; 13 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|alarnswitch:inst15                                                     ; work         ;
+;       |debonce:inst|        ; 3 (1)             ; 7 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|alarnswitch:inst15|debonce:inst                                        ; work         ;
+;          |switchlll:inst|   ; 2 (2)             ; 6 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|alarnswitch:inst15|debonce:inst|switchlll:inst                         ; work         ;
+;             |7474:inst1|    ; 0 (0)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|alarnswitch:inst15|debonce:inst|switchlll:inst|7474:inst1              ; work         ;
+;             |7474:inst2|    ; 0 (0)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|alarnswitch:inst15|debonce:inst|switchlll:inst|7474:inst2              ; work         ;
+;             |7474:inst|     ; 0 (0)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|alarnswitch:inst15|debonce:inst|switchlll:inst|7474:inst               ; work         ;
+;       |switchlll:inst1|     ; 1 (1)             ; 6 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|alarnswitch:inst15|switchlll:inst1                                     ; work         ;
+;          |7474:inst1|       ; 0 (0)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|alarnswitch:inst15|switchlll:inst1|7474:inst1                          ; work         ;
+;          |7474:inst2|       ; 0 (0)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|alarnswitch:inst15|switchlll:inst1|7474:inst2                          ; work         ;
+;          |7474:inst|        ; 0 (0)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|alarnswitch:inst15|switchlll:inst1|7474:inst                           ; work         ;
+;    |boom:inst12|            ; 9 (4)             ; 5 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|boom:inst12                                                            ; work         ;
+;       |74390:inst2|         ; 5 (5)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|boom:inst12|74390:inst2                                                ; work         ;
+;    |choose:inst13|          ; 17 (17)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|choose:inst13                                                          ; work         ;
+;    |chooseseg:inst132|      ; 26 (26)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|chooseseg:inst132                                                      ; work         ;
+;    |cntall:inst20|          ; 38 (7)            ; 27 (3)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|cntall:inst20                                                          ; work         ;
+;       |74390:inst11|        ; 10 (10)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|cntall:inst20|74390:inst11                                             ; work         ;
+;       |74390:inst7|         ; 11 (11)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|cntall:inst20|74390:inst7                                              ; work         ;
+;       |74390:inst|          ; 10 (10)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|cntall:inst20|74390:inst                                               ; work         ;
+;    |debonce:inst11|         ; 3 (1)             ; 7 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|debonce:inst11                                                         ; work         ;
+;       |switchlll:inst|      ; 2 (2)             ; 6 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|debonce:inst11|switchlll:inst                                          ; work         ;
+;          |7474:inst1|       ; 0 (0)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|debonce:inst11|switchlll:inst|7474:inst1                               ; work         ;
+;          |7474:inst2|       ; 0 (0)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|debonce:inst11|switchlll:inst|7474:inst2                               ; work         ;
+;          |7474:inst|        ; 0 (0)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|debonce:inst11|switchlll:inst|7474:inst                                ; work         ;
+;    |debonce:inst23|         ; 3 (1)             ; 7 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|debonce:inst23                                                         ; work         ;
+;       |switchlll:inst|      ; 2 (2)             ; 6 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|debonce:inst23|switchlll:inst                                          ; work         ;
+;          |7474:inst1|       ; 0 (0)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|debonce:inst23|switchlll:inst|7474:inst1                               ; work         ;
+;          |7474:inst2|       ; 0 (0)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|debonce:inst23|switchlll:inst|7474:inst2                               ; work         ;
+;          |7474:inst|        ; 0 (0)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|debonce:inst23|switchlll:inst|7474:inst                                ; work         ;
+;    |debonce:inst2|          ; 3 (1)             ; 7 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|debonce:inst2                                                          ; work         ;
+;       |switchlll:inst|      ; 2 (2)             ; 6 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|debonce:inst2|switchlll:inst                                           ; work         ;
+;          |7474:inst1|       ; 0 (0)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|debonce:inst2|switchlll:inst|7474:inst1                                ; work         ;
+;          |7474:inst2|       ; 0 (0)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|debonce:inst2|switchlll:inst|7474:inst2                                ; work         ;
+;          |7474:inst|        ; 0 (0)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|debonce:inst2|switchlll:inst|7474:inst                                 ; work         ;
+;    |display:inst16|         ; 22 (0)            ; 5 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|display:inst16                                                         ; work         ;
+;       |cnt8:inst|           ; 6 (0)             ; 5 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|display:inst16|cnt8:inst                                               ; work         ;
+;          |74390:inst|       ; 6 (6)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|display:inst16|cnt8:inst|74390:inst                                    ; work         ;
+;       |seg_select:inst2|    ; 16 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|display:inst16|seg_select:inst2                                        ; work         ;
+;          |select1bit:inst1| ; 4 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|display:inst16|seg_select:inst2|select1bit:inst1                       ; work         ;
+;             |74151:inst|    ; 4 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|display:inst16|seg_select:inst2|select1bit:inst1|74151:inst            ; work         ;
+;                |f74151:sub| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|display:inst16|seg_select:inst2|select1bit:inst1|74151:inst|f74151:sub ; work         ;
+;          |select1bit:inst2| ; 4 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|display:inst16|seg_select:inst2|select1bit:inst2                       ; work         ;
+;             |74151:inst|    ; 4 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|display:inst16|seg_select:inst2|select1bit:inst2|74151:inst            ; work         ;
+;                |f74151:sub| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|display:inst16|seg_select:inst2|select1bit:inst2|74151:inst|f74151:sub ; work         ;
+;          |select1bit:inst3| ; 4 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|display:inst16|seg_select:inst2|select1bit:inst3                       ; work         ;
+;             |74151:inst|    ; 4 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|display:inst16|seg_select:inst2|select1bit:inst3|74151:inst            ; work         ;
+;                |f74151:sub| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|display:inst16|seg_select:inst2|select1bit:inst3|74151:inst|f74151:sub ; work         ;
+;          |select1bit:inst4| ; 4 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|display:inst16|seg_select:inst2|select1bit:inst4                       ; work         ;
+;             |74151:inst|    ; 4 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|display:inst16|seg_select:inst2|select1bit:inst4|74151:inst            ; work         ;
+;                |f74151:sub| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|display:inst16|seg_select:inst2|select1bit:inst4|74151:inst|f74151:sub ; work         ;
+;    |display:inst5|          ; 21 (0)            ; 5 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|display:inst5                                                          ; work         ;
+;       |cnt8:inst|           ; 5 (0)             ; 5 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|display:inst5|cnt8:inst                                                ; work         ;
+;          |74390:inst|       ; 5 (5)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|display:inst5|cnt8:inst|74390:inst                                     ; work         ;
+;       |seg_select:inst2|    ; 16 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|display:inst5|seg_select:inst2                                         ; work         ;
+;          |select1bit:inst1| ; 4 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|display:inst5|seg_select:inst2|select1bit:inst1                        ; work         ;
+;             |74151:inst|    ; 4 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|display:inst5|seg_select:inst2|select1bit:inst1|74151:inst             ; work         ;
+;                |f74151:sub| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|display:inst5|seg_select:inst2|select1bit:inst1|74151:inst|f74151:sub  ; work         ;
+;          |select1bit:inst2| ; 4 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|display:inst5|seg_select:inst2|select1bit:inst2                        ; work         ;
+;             |74151:inst|    ; 4 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|display:inst5|seg_select:inst2|select1bit:inst2|74151:inst             ; work         ;
+;                |f74151:sub| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|display:inst5|seg_select:inst2|select1bit:inst2|74151:inst|f74151:sub  ; work         ;
+;          |select1bit:inst3| ; 4 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|display:inst5|seg_select:inst2|select1bit:inst3                        ; work         ;
+;             |74151:inst|    ; 4 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|display:inst5|seg_select:inst2|select1bit:inst3|74151:inst             ; work         ;
+;                |f74151:sub| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|display:inst5|seg_select:inst2|select1bit:inst3|74151:inst|f74151:sub  ; work         ;
+;          |select1bit:inst4| ; 4 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|display:inst5|seg_select:inst2|select1bit:inst4                        ; work         ;
+;             |74151:inst|    ; 4 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|display:inst5|seg_select:inst2|select1bit:inst4|74151:inst             ; work         ;
+;                |f74151:sub| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|display:inst5|seg_select:inst2|select1bit:inst4|74151:inst|f74151:sub  ; work         ;
+;    |fre_div:inst888|        ; 39 (0)            ; 31 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|fre_div:inst888                                                        ; work         ;
+;       |74390:inst1|         ; 9 (9)             ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|fre_div:inst888|74390:inst1                                            ; work         ;
+;       |m100:inst4|          ; 10 (0)            ; 8 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|fre_div:inst888|m100:inst4                                             ; work         ;
+;          |74390:inst|       ; 10 (10)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|fre_div:inst888|m100:inst4|74390:inst                                  ; work         ;
+;       |m100:inst5|          ; 10 (0)            ; 8 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|fre_div:inst888|m100:inst5                                             ; work         ;
+;          |74390:inst|       ; 10 (10)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|fre_div:inst888|m100:inst5|74390:inst                                  ; work         ;
+;       |m100:inst6|          ; 10 (0)            ; 8 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|fre_div:inst888|m100:inst6                                             ; work         ;
+;          |74390:inst|       ; 10 (10)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|fre_div:inst888|m100:inst6|74390:inst                                  ; work         ;
+;    |move:inst25|            ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|move:inst25                                                            ; work         ;
+;    |move:inst26|            ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|move:inst26                                                            ; work         ;
+;    |music1:inst30|          ; 221 (6)           ; 175 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|music1:inst30                                                          ; work         ;
+;       |74151:inst2|         ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|music1:inst30|74151:inst2                                              ; work         ;
+;          |f74151:sub|       ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|music1:inst30|74151:inst2|f74151:sub                                   ; work         ;
+;       |74151:inst3|         ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|music1:inst30|74151:inst3                                              ; work         ;
+;          |f74151:sub|       ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|music1:inst30|74151:inst3|f74151:sub                                   ; work         ;
+;       |74151:inst4|         ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|music1:inst30|74151:inst4                                              ; work         ;
+;          |f74151:sub|       ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|music1:inst30|74151:inst4|f74151:sub                                   ; work         ;
+;       |74151:inst5|         ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|music1:inst30|74151:inst5                                              ; work         ;
+;          |f74151:sub|       ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|music1:inst30|74151:inst5|f74151:sub                                   ; work         ;
+;       |74390:inst21|        ; 5 (5)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|music1:inst30|74390:inst21                                             ; work         ;
+;       |Do:inst13|           ; 27 (1)            ; 23 (1)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|music1:inst30|Do:inst13                                                ; work         ;
+;          |74390:inst|       ; 10 (10)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|music1:inst30|Do:inst13|74390:inst                                     ; work         ;
+;          |m200:inst10|      ; 16 (1)            ; 14 (1)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|music1:inst30|Do:inst13|m200:inst10                                    ; work         ;
+;             |74390:inst8|   ; 10 (10)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|music1:inst30|Do:inst13|m200:inst10|74390:inst8                        ; work         ;
+;             |cnt8:inst|     ; 5 (0)             ; 5 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|music1:inst30|Do:inst13|m200:inst10|cnt8:inst                          ; work         ;
+;                |74390:inst| ; 5 (5)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|music1:inst30|Do:inst13|m200:inst10|cnt8:inst|74390:inst               ; work         ;
+;       |Fa:inst16|           ; 28 (2)            ; 23 (1)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|music1:inst30|Fa:inst16                                                ; work         ;
+;          |74390:inst|       ; 10 (10)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|music1:inst30|Fa:inst16|74390:inst                                     ; work         ;
+;          |m200:inst7|       ; 16 (1)            ; 14 (1)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|music1:inst30|Fa:inst16|m200:inst7                                     ; work         ;
+;             |74390:inst8|   ; 10 (10)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|music1:inst30|Fa:inst16|m200:inst7|74390:inst8                         ; work         ;
+;             |cnt8:inst|     ; 5 (0)             ; 5 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|music1:inst30|Fa:inst16|m200:inst7|cnt8:inst                           ; work         ;
+;                |74390:inst| ; 5 (5)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|music1:inst30|Fa:inst16|m200:inst7|cnt8:inst|74390:inst                ; work         ;
+;       |La:inst18|           ; 27 (1)            ; 23 (1)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|music1:inst30|La:inst18                                                ; work         ;
+;          |74390:inst|       ; 10 (10)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|music1:inst30|La:inst18|74390:inst                                     ; work         ;
+;          |m200:inst7|       ; 16 (1)            ; 14 (1)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|music1:inst30|La:inst18|m200:inst7                                     ; work         ;
+;             |74390:inst8|   ; 10 (10)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|music1:inst30|La:inst18|m200:inst7|74390:inst8                         ; work         ;
+;             |cnt8:inst|     ; 5 (0)             ; 5 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|music1:inst30|La:inst18|m200:inst7|cnt8:inst                           ; work         ;
+;                |74390:inst| ; 5 (5)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|music1:inst30|La:inst18|m200:inst7|cnt8:inst|74390:inst                ; work         ;
+;       |Mi:inst15|           ; 28 (2)            ; 23 (1)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|music1:inst30|Mi:inst15                                                ; work         ;
+;          |74390:inst|       ; 10 (10)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|music1:inst30|Mi:inst15|74390:inst                                     ; work         ;
+;          |m200:inst7|       ; 16 (1)            ; 14 (1)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|music1:inst30|Mi:inst15|m200:inst7                                     ; work         ;
+;             |74390:inst8|   ; 10 (10)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|music1:inst30|Mi:inst15|m200:inst7|74390:inst8                         ; work         ;
+;             |cnt8:inst|     ; 5 (0)             ; 5 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|music1:inst30|Mi:inst15|m200:inst7|cnt8:inst                           ; work         ;
+;                |74390:inst| ; 5 (5)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|music1:inst30|Mi:inst15|m200:inst7|cnt8:inst|74390:inst                ; work         ;
+;       |Re:inst14|           ; 27 (1)            ; 23 (1)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|music1:inst30|Re:inst14                                                ; work         ;
+;          |74390:inst|       ; 10 (10)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|music1:inst30|Re:inst14|74390:inst                                     ; work         ;
+;          |m200:inst9|       ; 16 (1)            ; 14 (1)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|music1:inst30|Re:inst14|m200:inst9                                     ; work         ;
+;             |74390:inst8|   ; 10 (10)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|music1:inst30|Re:inst14|m200:inst9|74390:inst8                         ; work         ;
+;             |cnt8:inst|     ; 5 (0)             ; 5 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|music1:inst30|Re:inst14|m200:inst9|cnt8:inst                           ; work         ;
+;                |74390:inst| ; 5 (5)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|music1:inst30|Re:inst14|m200:inst9|cnt8:inst|74390:inst                ; work         ;
+;       |Sol:inst17|          ; 27 (1)            ; 23 (1)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|music1:inst30|Sol:inst17                                               ; work         ;
+;          |74390:inst|       ; 10 (10)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|music1:inst30|Sol:inst17|74390:inst                                    ; work         ;
+;          |m200:inst2|       ; 16 (1)            ; 14 (1)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|music1:inst30|Sol:inst17|m200:inst2                                    ; work         ;
+;             |74390:inst8|   ; 10 (10)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|music1:inst30|Sol:inst17|m200:inst2|74390:inst8                        ; work         ;
+;             |cnt8:inst|     ; 5 (0)             ; 5 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|music1:inst30|Sol:inst17|m200:inst2|cnt8:inst                          ; work         ;
+;                |74390:inst| ; 5 (5)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|music1:inst30|Sol:inst17|m200:inst2|cnt8:inst|74390:inst               ; work         ;
+;       |cnt8:instd|          ; 5 (0)             ; 5 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|music1:inst30|cnt8:instd                                               ; work         ;
+;          |74390:inst|       ; 5 (5)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|music1:inst30|cnt8:instd|74390:inst                                    ; work         ;
+;       |fre_div:inst11|      ; 25 (0)            ; 20 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|music1:inst30|fre_div:inst11                                           ; work         ;
+;          |74390:inst1|      ; 5 (5)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|music1:inst30|fre_div:inst11|74390:inst1                               ; work         ;
+;          |m100:inst4|       ; 10 (0)            ; 8 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|music1:inst30|fre_div:inst11|m100:inst4                                ; work         ;
+;             |74390:inst|    ; 10 (10)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|music1:inst30|fre_div:inst11|m100:inst4|74390:inst                     ; work         ;
+;          |m100:inst5|       ; 10 (0)            ; 8 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|music1:inst30|fre_div:inst11|m100:inst5                                ; work         ;
+;             |74390:inst|    ; 10 (10)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|music1:inst30|fre_div:inst11|m100:inst5|74390:inst                     ; work         ;
+;       |m100:inst12|         ; 10 (0)            ; 8 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|music1:inst30|m100:inst12                                              ; work         ;
+;          |74390:inst|       ; 10 (10)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|music1:inst30|m100:inst12|74390:inst                                   ; work         ;
+;    |switchlll:inst24|       ; 0 (0)             ; 6 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|switchlll:inst24                                                       ; work         ;
+;       |7474:inst1|          ; 0 (0)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|switchlll:inst24|7474:inst1                                            ; work         ;
+;       |7474:inst2|          ; 0 (0)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|switchlll:inst24|7474:inst2                                            ; work         ;
+;       |7474:inst|           ; 0 (0)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|switchlll:inst24|7474:inst                                             ; work         ;
+;    |switchlll:inst43|       ; 0 (0)             ; 6 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|switchlll:inst43                                                       ; work         ;
+;       |7474:inst1|          ; 0 (0)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|switchlll:inst43|7474:inst1                                            ; work         ;
+;       |7474:inst2|          ; 0 (0)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|switchlll:inst43|7474:inst2                                            ; work         ;
+;       |7474:inst|           ; 0 (0)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|switchlll:inst43|7474:inst                                             ; work         ;
+;    |switchlll:inst4|        ; 2 (2)             ; 6 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|switchlll:inst4                                                        ; work         ;
+;       |7474:inst1|          ; 0 (0)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|switchlll:inst4|7474:inst1                                             ; work         ;
+;       |7474:inst2|          ; 0 (0)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|switchlll:inst4|7474:inst2                                             ; work         ;
+;       |7474:inst|           ; 0 (0)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|switchlll:inst4|7474:inst                                              ; work         ;
+;    |switchlll:inst9l|       ; 0 (0)             ; 6 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|switchlll:inst9l                                                       ; work         ;
+;       |7474:inst1|          ; 0 (0)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|switchlll:inst9l|7474:inst1                                            ; work         ;
+;       |7474:inst2|          ; 0 (0)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|switchlll:inst9l|7474:inst2                                            ; work         ;
+;       |7474:inst|           ; 0 (0)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|switchlll:inst9l|7474:inst                                             ; work         ;
+;    |timealarm:inst|         ; 15 (13)           ; 22 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|timealarm:inst                                                         ; work         ;
+;       |74194:inst1|         ; 0 (0)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|timealarm:inst|74194:inst1                                             ; work         ;
+;       |74194:inst2|         ; 0 (0)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|timealarm:inst|74194:inst2                                             ; work         ;
+;       |74194:inst3|         ; 0 (0)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|timealarm:inst|74194:inst3                                             ; work         ;
+;       |74194:instk|         ; 0 (0)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|timealarm:inst|74194:instk                                             ; work         ;
+;       |switchlll:inst5|     ; 2 (2)             ; 6 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|timealarm:inst|switchlll:inst5                                         ; work         ;
+;          |7474:inst1|       ; 0 (0)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|timealarm:inst|switchlll:inst5|7474:inst1                              ; work         ;
+;          |7474:inst2|       ; 0 (0)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|timealarm:inst|switchlll:inst5|7474:inst2                              ; work         ;
+;          |7474:inst|        ; 0 (0)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|timealarm:inst|switchlll:inst5|7474:inst                               ; work         ;
+;    |timedelay:inst8|        ; 17 (4)            ; 10 (1)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|timedelay:inst8                                                        ; work         ;
+;       |cnt60:inst2|         ; 13 (3)            ; 9 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|timedelay:inst8|cnt60:inst2                                            ; work         ;
+;          |74390:inst|       ; 10 (10)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|timedelay:inst8|cnt60:inst2|74390:inst                                 ; work         ;
++-----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 365   ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 240   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 16    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------------------+
+; Inverted Register Statistics                                  ;
++-----------------------------------------------------+---------+
+; Inverted Register                                   ; Fan out ;
++-----------------------------------------------------+---------+
+; music1:inst30|Fa:inst16|inst3                       ; 10      ;
+; music1:inst30|Mi:inst15|inst3                       ; 10      ;
+; music1:inst30|Sol:inst17|inst4                      ; 11      ;
+; music1:inst30|La:inst18|inst3                       ; 9       ;
+; music1:inst30|Do:inst13|inst3                       ; 10      ;
+; music1:inst30|Re:inst14|inst3                       ; 10      ;
+; music1:inst30|cnt8:instd|inst1                      ; 4       ;
+; cntall:inst20|inst5                                 ; 1       ;
+; cntall:inst20|inst12                                ; 1       ;
+; display:inst5|cnt8:inst|inst1                       ; 4       ;
+; display:inst16|cnt8:inst|inst1                      ; 4       ;
+; cntall:inst20|inst2                                 ; 1       ;
+; alarmcntall:inst27|inst2                            ; 1       ;
+; alarmcntall:inst27|inst5                            ; 1       ;
+; alarmcntall:inst27|inst12                           ; 1       ;
+; music1:inst30|Fa:inst16|m200:inst7|inst2            ; 8       ;
+; music1:inst30|Mi:inst15|m200:inst7|inst2            ; 8       ;
+; music1:inst30|Sol:inst17|m200:inst2|inst2           ; 8       ;
+; music1:inst30|La:inst18|m200:inst7|inst2            ; 8       ;
+; music1:inst30|Do:inst13|m200:inst10|inst2           ; 8       ;
+; music1:inst30|Re:inst14|m200:inst9|inst2            ; 8       ;
+; timedelay:inst8|cnt60:inst2|inst2                   ; 1       ;
+; music1:inst30|Fa:inst16|m200:inst7|cnt8:inst|inst1  ; 4       ;
+; music1:inst30|Mi:inst15|m200:inst7|cnt8:inst|inst1  ; 4       ;
+; music1:inst30|Sol:inst17|m200:inst2|cnt8:inst|inst1 ; 4       ;
+; music1:inst30|La:inst18|m200:inst7|cnt8:inst|inst1  ; 4       ;
+; music1:inst30|Do:inst13|m200:inst10|cnt8:inst|inst1 ; 4       ;
+; music1:inst30|Re:inst14|m200:inst9|cnt8:inst|inst1  ; 4       ;
+; Total number of inverted registers = 28             ;         ;
++-----------------------------------------------------+---------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------+
+; 5:1                ; 4 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |clock|display:inst5|seg_select:inst2|select1bit:inst1|74151:inst|f74151:sub|81  ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |clock|display:inst16|seg_select:inst2|select1bit:inst4|74151:inst|f74151:sub|81 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: music1:inst30|74151:inst3 ;
++------------------------+-------------+---------------------------------+
+; Parameter Name         ; Value       ; Type                            ;
++------------------------+-------------+---------------------------------+
+; DEVICE_FAMILY          ; Cyclone III ; Untyped                         ;
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                      ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY                    ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE                    ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE                  ;
++------------------------+-------------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: music1:inst30|74151:inst4 ;
++------------------------+-------------+---------------------------------+
+; Parameter Name         ; Value       ; Type                            ;
++------------------------+-------------+---------------------------------+
+; DEVICE_FAMILY          ; Cyclone III ; Untyped                         ;
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                      ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY                    ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE                    ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE                  ;
++------------------------+-------------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: music1:inst30|74151:inst2 ;
++------------------------+-------------+---------------------------------+
+; Parameter Name         ; Value       ; Type                            ;
++------------------------+-------------+---------------------------------+
+; DEVICE_FAMILY          ; Cyclone III ; Untyped                         ;
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                      ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY                    ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE                    ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE                  ;
++------------------------+-------------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: music1:inst30|74151:inst5 ;
++------------------------+-------------+---------------------------------+
+; Parameter Name         ; Value       ; Type                            ;
++------------------------+-------------+---------------------------------+
+; DEVICE_FAMILY          ; Cyclone III ; Untyped                         ;
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                      ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY                    ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE                    ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE                  ;
++------------------------+-------------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: music1:inst30|74151:inst7 ;
++------------------------+-------------+---------------------------------+
+; Parameter Name         ; Value       ; Type                            ;
++------------------------+-------------+---------------------------------+
+; DEVICE_FAMILY          ; Cyclone III ; Untyped                         ;
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                      ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY                    ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE                    ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE                  ;
++------------------------+-------------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: music1:inst30|74151:inst6 ;
++------------------------+-------------+---------------------------------+
+; Parameter Name         ; Value       ; Type                            ;
++------------------------+-------------+---------------------------------+
+; DEVICE_FAMILY          ; Cyclone III ; Untyped                         ;
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                      ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY                    ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE                    ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE                  ;
++------------------------+-------------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: music1:inst30|74151:inst8 ;
++------------------------+-------------+---------------------------------+
+; Parameter Name         ; Value       ; Type                            ;
++------------------------+-------------+---------------------------------+
+; DEVICE_FAMILY          ; Cyclone III ; Untyped                         ;
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                      ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY                    ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE                    ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE                  ;
++------------------------+-------------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: music1:inst30|74151:inst9 ;
++------------------------+-------------+---------------------------------+
+; Parameter Name         ; Value       ; Type                            ;
++------------------------+-------------+---------------------------------+
+; DEVICE_FAMILY          ; Cyclone III ; Untyped                         ;
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                      ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY                    ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE                    ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE                  ;
++------------------------+-------------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: display:inst16|seg_select:inst2|select1bit:inst4|74151:inst ;
++------------------------+-------------+-------------------------------------------------------------------+
+; Parameter Name         ; Value       ; Type                                                              ;
++------------------------+-------------+-------------------------------------------------------------------+
+; DEVICE_FAMILY          ; Cyclone III ; Untyped                                                           ;
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                                                        ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY                                                      ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE                                                      ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE                                                    ;
++------------------------+-------------+-------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: display:inst16|seg_select:inst2|select1bit:inst3|74151:inst ;
++------------------------+-------------+-------------------------------------------------------------------+
+; Parameter Name         ; Value       ; Type                                                              ;
++------------------------+-------------+-------------------------------------------------------------------+
+; DEVICE_FAMILY          ; Cyclone III ; Untyped                                                           ;
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                                                        ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY                                                      ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE                                                      ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE                                                    ;
++------------------------+-------------+-------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: display:inst16|seg_select:inst2|select1bit:inst1|74151:inst ;
++------------------------+-------------+-------------------------------------------------------------------+
+; Parameter Name         ; Value       ; Type                                                              ;
++------------------------+-------------+-------------------------------------------------------------------+
+; DEVICE_FAMILY          ; Cyclone III ; Untyped                                                           ;
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                                                        ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY                                                      ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE                                                      ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE                                                    ;
++------------------------+-------------+-------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: display:inst16|seg_select:inst2|select1bit:inst2|74151:inst ;
++------------------------+-------------+-------------------------------------------------------------------+
+; Parameter Name         ; Value       ; Type                                                              ;
++------------------------+-------------+-------------------------------------------------------------------+
+; DEVICE_FAMILY          ; Cyclone III ; Untyped                                                           ;
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                                                        ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY                                                      ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE                                                      ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE                                                    ;
++------------------------+-------------+-------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: display:inst5|seg_select:inst2|select1bit:inst4|74151:inst ;
++------------------------+-------------+------------------------------------------------------------------+
+; Parameter Name         ; Value       ; Type                                                             ;
++------------------------+-------------+------------------------------------------------------------------+
+; DEVICE_FAMILY          ; Cyclone III ; Untyped                                                          ;
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                                                       ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY                                                     ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE                                                     ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE                                                   ;
++------------------------+-------------+------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: display:inst5|seg_select:inst2|select1bit:inst3|74151:inst ;
++------------------------+-------------+------------------------------------------------------------------+
+; Parameter Name         ; Value       ; Type                                                             ;
++------------------------+-------------+------------------------------------------------------------------+
+; DEVICE_FAMILY          ; Cyclone III ; Untyped                                                          ;
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                                                       ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY                                                     ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE                                                     ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE                                                   ;
++------------------------+-------------+------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: display:inst5|seg_select:inst2|select1bit:inst1|74151:inst ;
++------------------------+-------------+------------------------------------------------------------------+
+; Parameter Name         ; Value       ; Type                                                             ;
++------------------------+-------------+------------------------------------------------------------------+
+; DEVICE_FAMILY          ; Cyclone III ; Untyped                                                          ;
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                                                       ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY                                                     ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE                                                     ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE                                                   ;
++------------------------+-------------+------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: display:inst5|seg_select:inst2|select1bit:inst2|74151:inst ;
++------------------------+-------------+------------------------------------------------------------------+
+; Parameter Name         ; Value       ; Type                                                             ;
++------------------------+-------------+------------------------------------------------------------------+
+; DEVICE_FAMILY          ; Cyclone III ; Untyped                                                          ;
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                                                       ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY                                                     ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE                                                     ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE                                                   ;
++------------------------+-------------+------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.1.0 Build 162 10/23/2013 SJ Full Version
+    Info: Processing started: Sun Jun 17 22:34:39 2018
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off 7seg_display_cnt10 -c 7seg_display_cnt10
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file m200.bdf
+    Info (12023): Found entity 1: m200
+Info (12021): Found 1 design units, including 1 entities, in source file do.bdf
+    Info (12023): Found entity 1: Do
+Info (12021): Found 1 design units, including 1 entities, in source file music1.bdf
+    Info (12023): Found entity 1: music1
+Info (12021): Found 1 design units, including 1 entities, in source file sol.bdf
+    Info (12023): Found entity 1: Sol
+Info (12021): Found 1 design units, including 1 entities, in source file si.bdf
+    Info (12023): Found entity 1: Si
+Info (12021): Found 1 design units, including 1 entities, in source file re.bdf
+    Info (12023): Found entity 1: Re
+Info (12021): Found 1 design units, including 1 entities, in source file mi.bdf
+    Info (12023): Found entity 1: Mi
+Info (12021): Found 1 design units, including 1 entities, in source file la.bdf
+    Info (12023): Found entity 1: La
+Info (12021): Found 1 design units, including 1 entities, in source file fa.bdf
+    Info (12023): Found entity 1: Fa
+Info (12021): Found 1 design units, including 1 entities, in source file clock.bdf
+    Info (12023): Found entity 1: clock
+Info (12021): Found 1 design units, including 1 entities, in source file cnt60.bdf
+    Info (12023): Found entity 1: cnt60
+Info (12021): Found 1 design units, including 1 entities, in source file switchlll.bdf
+    Info (12023): Found entity 1: switchlll
+Info (12021): Found 1 design units, including 1 entities, in source file seg_select.bdf
+    Info (12023): Found entity 1: seg_select
+Info (12021): Found 1 design units, including 1 entities, in source file debonce.bdf
+    Info (12023): Found entity 1: debonce
+Info (12021): Found 1 design units, including 1 entities, in source file cntall.bdf
+    Info (12023): Found entity 1: cntall
+Info (12021): Found 1 design units, including 1 entities, in source file m100.bdf
+    Info (12023): Found entity 1: m100
+Info (12021): Found 1 design units, including 1 entities, in source file fre_div.bdf
+    Info (12023): Found entity 1: fre_div
+Info (12021): Found 1 design units, including 1 entities, in source file decoder.bdf
+    Info (12023): Found entity 1: decoder
+Info (12021): Found 1 design units, including 1 entities, in source file dig_select.bdf
+    Info (12023): Found entity 1: dig_select
+Info (12021): Found 1 design units, including 1 entities, in source file cnt6.bdf
+    Info (12023): Found entity 1: cnt6
+Info (12021): Found 1 design units, including 1 entities, in source file select1bit.bdf
+    Info (12023): Found entity 1: select1bit
+Info (12021): Found 1 design units, including 1 entities, in source file display.bdf
+    Info (12023): Found entity 1: display
+Info (12021): Found 1 design units, including 1 entities, in source file timealarm.bdf
+    Info (12023): Found entity 1: timealarm
+Info (12021): Found 1 design units, including 1 entities, in source file timedelay.bdf
+    Info (12023): Found entity 1: timedelay
+Info (12021): Found 1 design units, including 1 entities, in source file cnt8.bdf
+    Info (12023): Found entity 1: cnt8
+Info (12021): Found 1 design units, including 1 entities, in source file choose.bdf
+    Info (12023): Found entity 1: choose
+Info (12021): Found 1 design units, including 1 entities, in source file chooseseg.bdf
+    Info (12023): Found entity 1: chooseseg
+Info (12021): Found 1 design units, including 1 entities, in source file move.bdf
+    Info (12023): Found entity 1: move
+Info (12021): Found 1 design units, including 1 entities, in source file alarmcntall.bdf
+    Info (12023): Found entity 1: alarmcntall
+Info (12021): Found 1 design units, including 1 entities, in source file alarnswitch.bdf
+    Info (12023): Found entity 1: alarnswitch
+Info (12021): Found 1 design units, including 1 entities, in source file boom.bdf
+    Info (12023): Found entity 1: boom
+Info (12021): Found 1 design units, including 1 entities, in source file ishenggang.bdf
+    Info (12023): Found entity 1: ishenggang
+Info (12127): Elaborating entity "clock" for the top level hierarchy
+Info (12128): Elaborating entity "move" for hierarchy "move:inst26"
+Info (12128): Elaborating entity "debonce" for hierarchy "debonce:inst23"
+Info (12128): Elaborating entity "switchlll" for hierarchy "debonce:inst23|switchlll:inst"
+Info (12128): Elaborating entity "7474" for hierarchy "debonce:inst23|switchlll:inst|7474:inst1"
+Info (12130): Elaborated megafunction instantiation "debonce:inst23|switchlll:inst|7474:inst1"
+Info (12128): Elaborating entity "fre_div" for hierarchy "fre_div:inst888"
+Info (12128): Elaborating entity "74390" for hierarchy "fre_div:inst888|74390:inst1"
+Info (12130): Elaborated megafunction instantiation "fre_div:inst888|74390:inst1"
+Info (12128): Elaborating entity "m100" for hierarchy "fre_div:inst888|m100:inst5"
+Info (12128): Elaborating entity "timealarm" for hierarchy "timealarm:inst"
+Info (12128): Elaborating entity "74194" for hierarchy "timealarm:inst|74194:inst3"
+Info (12130): Elaborated megafunction instantiation "timealarm:inst|74194:inst3"
+Info (12128): Elaborating entity "alarnswitch" for hierarchy "alarnswitch:inst15"
+Info (12128): Elaborating entity "cntall" for hierarchy "cntall:inst20"
+Info (12128): Elaborating entity "alarmcntall" for hierarchy "alarmcntall:inst27"
+Info (12128): Elaborating entity "music1" for hierarchy "music1:inst30"
+Info (12128): Elaborating entity "74151" for hierarchy "music1:inst30|74151:inst3"
+Info (12130): Elaborated megafunction instantiation "music1:inst30|74151:inst3"
+Info (12128): Elaborating entity "f74151" for hierarchy "music1:inst30|74151:inst3|f74151:sub"
+Info (12131): Elaborated megafunction instantiation "music1:inst30|74151:inst3|f74151:sub", which is child of megafunction instantiation "music1:inst30|74151:inst3"
+Info (12128): Elaborating entity "74138" for hierarchy "music1:inst30|74138:inst"
+Info (12130): Elaborated megafunction instantiation "music1:inst30|74138:inst"
+Info (12128): Elaborating entity "cnt8" for hierarchy "music1:inst30|cnt8:instd"
+Info (12128): Elaborating entity "La" for hierarchy "music1:inst30|La:inst18"
+Info (12128): Elaborating entity "m200" for hierarchy "music1:inst30|La:inst18|m200:inst7"
+Info (12128): Elaborating entity "Sol" for hierarchy "music1:inst30|Sol:inst17"
+Info (12128): Elaborating entity "74151" for hierarchy "music1:inst30|74151:inst4"
+Info (12130): Elaborated megafunction instantiation "music1:inst30|74151:inst4"
+Info (12128): Elaborating entity "Fa" for hierarchy "music1:inst30|Fa:inst16"
+Info (12128): Elaborating entity "Mi" for hierarchy "music1:inst30|Mi:inst15"
+Info (12128): Elaborating entity "Do" for hierarchy "music1:inst30|Do:inst13"
+Info (12128): Elaborating entity "Re" for hierarchy "music1:inst30|Re:inst14"
+Info (12128): Elaborating entity "timedelay" for hierarchy "timedelay:inst8"
+Info (12128): Elaborating entity "cnt60" for hierarchy "timedelay:inst8|cnt60:inst2"
+Info (12128): Elaborating entity "boom" for hierarchy "boom:inst12"
+Info (12128): Elaborating entity "choose" for hierarchy "choose:inst13"
+Info (12128): Elaborating entity "display" for hierarchy "display:inst16"
+Info (12128): Elaborating entity "dig_select" for hierarchy "display:inst16|dig_select:inst8"
+Info (12128): Elaborating entity "chooseseg" for hierarchy "display:inst16|chooseseg:inst5"
+Info (12128): Elaborating entity "ishenggang" for hierarchy "display:inst16|ishenggang:inst9"
+Info (12128): Elaborating entity "decoder" for hierarchy "display:inst16|decoder:inst3"
+Info (12128): Elaborating entity "7448" for hierarchy "display:inst16|decoder:inst3|7448:inst"
+Info (12130): Elaborated megafunction instantiation "display:inst16|decoder:inst3|7448:inst"
+Info (12128): Elaborating entity "seg_select" for hierarchy "display:inst16|seg_select:inst2"
+Info (12128): Elaborating entity "select1bit" for hierarchy "display:inst16|seg_select:inst2|select1bit:inst4"
+Info (12128): Elaborating entity "74151" for hierarchy "display:inst16|seg_select:inst2|select1bit:inst4|74151:inst"
+Info (12130): Elaborated megafunction instantiation "display:inst16|seg_select:inst2|select1bit:inst4|74151:inst"
+Info (13014): Ignored 20 buffer(s)
+    Info (13017): Ignored 20 CASCADE buffer(s)
+Warning (19016): Clock multiplexers are found and protected
+    Warning (19017): Found clock multiplexer cntall:inst20|inst18~0
+    Warning (19017): Found clock multiplexer cntall:inst20|inst17~0
+Info (13000): Registers with preset signals will power-up high
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 621 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 10 input pins
+    Info (21059): Implemented 20 output pins
+    Info (21061): Implemented 591 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 4679 megabytes
+    Info: Processing ended: Sun Jun 17 22:34:44 2018
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:04
+
+

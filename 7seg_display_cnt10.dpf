@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pin_planner>
+	<pin_info>
+		<pin name="clik_250hz" source="Pin Planner" >
+		</pin>
+		<pin name="clik_Sol" source="Pin Planner" >
+		</pin>
+		<pin name="hpause" source="Pin Planner" >
+		</pin>
+		<pin name="min" source="Pin Planner" >
+		</pin>
+		<pin name="minpause" source="Pin Planner" >
+		</pin>
+		<pin name="clear" source="Pin Planner" >
+		</pin>
+		<pin name="alarm_on/off" source="Pin Planner" >
+		</pin>
+		<pin name="loadalarmtime" source="Pin Planner" >
+		</pin>
+		<pin name="stopalarmring" source="Pin Planner" >
+		</pin>
+		<pin name="seg[6]" source="Pin Planner" >
+		</pin>
+		<pin name="seg[5]" source="Pin Planner" >
+		</pin>
+		<pin name="seg[4]" source="Pin Planner" >
+		</pin>
+		<pin name="seg[3]" source="Pin Planner" >
+		</pin>
+		<pin name="seg[2]" source="Pin Planner" >
+		</pin>
+		<pin name="seg[1]" source="Pin Planner" >
+		</pin>
+		<pin name="seg[0]" source="Pin Planner" >
+		</pin>
+		<pin name="dictr[3]" source="Pin Planner" >
+		</pin>
+		<pin name="dictr[2]" source="Pin Planner" >
+		</pin>
+		<pin name="dictr[1]" source="Pin Planner" >
+		</pin>
+		<pin name="dictr[0]" source="Pin Planner" >
+		</pin>
+		<pin name="digctr[0]" source="Pin Planner" >
+		</pin>
+		<pin name="digctr[1]" source="Pin Planner" >
+		</pin>
+		<pin name="digctr[2]" source="Pin Planner" >
+		</pin>
+		<pin name="digctr[3]" source="Pin Planner" >
+		</pin>
+	</pin_info>
+	<buses>
+	</buses>
+	<group_file_association>
+	</group_file_association>
+	<pin_planner_file_specifies>
+	</pin_planner_file_specifies>
+</pin_planner>

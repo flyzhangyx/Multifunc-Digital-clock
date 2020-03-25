@@ -1,0 +1,531 @@
+// Copyright (C) 1991-2013 Altera Corporation
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, Altera MegaCore Function License 
+// Agreement, or other applicable license agreement, including, 
+// without limitation, that your use is for the sole purpose of 
+// programming logic devices manufactured by Altera and sold by 
+// Altera or its authorized distributors.  Please refer to the 
+// applicable agreement for further details.
+
+// *****************************************************************************
+// This file contains a Verilog test bench with test vectors .The test vectors  
+// are exported from a vector file in the Quartus Waveform Editor and apply to  
+// the top level entity of the current Quartus project .The user can use this   
+// testbench to simulate his design using a third-party simulation tool .       
+// *****************************************************************************
+// Generated on "06/09/2018 16:36:23"
+                                                                        
+// Verilog Self-Checking Test Bench (with test vectors) for design :    timealarm
+// 
+// Simulation tool : 3rd Party
+// 
+
+`timescale 1 ps/ 1 ps
+module timealarm_vlg_sample_tst(
+	1h_one,
+	1h_ten,
+	1min_one,
+	1min_ten,
+	aclimb500hz,
+	actrclear,
+	alon/off,
+	h_one,
+	h_ten,
+	ldtime,
+	min_one,
+	min_ten,
+	sampler_tx
+);
+input [3:0] 1h_one;
+input [3:0] 1h_ten;
+input [3:0] 1min_one;
+input [3:0] 1min_ten;
+input  aclimb500hz;
+input  actrclear;
+input  alon/off;
+input [3:0] h_one;
+input [3:0] h_ten;
+input  ldtime;
+input [3:0] min_one;
+input [3:0] min_ten;
+output sampler_tx;
+
+reg sample;
+time current_time;
+always @(1h_one or 1h_ten or 1min_one or 1min_ten or aclimb500hz or actrclear or alon/off or h_one or h_ten or ldtime or min_one or min_ten)
+                                                                                
+begin                                                 
+ if ($realtime > 0)                                   
+ begin                                                
+	if ($realtime == 0 || $realtime != current_time)  
+	begin									          
+		if (sample === 1'bx)                          
+			sample = 0;                               
+		else                                          
+			sample = ~sample;                         
+	end										          
+	current_time = $realtime;					      
+ end                                                  
+end                                                   
+
+assign sampler_tx = sample;
+endmodule
+
+module timealarm_vlg_check_tst (
+	alarm,
+	alarmlight,
+	sampler_rx
+);
+input  alarm;
+input  alarmlight;
+input sampler_rx;
+
+reg  alarm_expected;
+reg  alarmlight_expected;
+
+reg  alarm_prev;
+reg  alarmlight_prev;
+
+reg  alarm_expected_prev;
+reg  alarmlight_expected_prev;
+
+reg  last_alarm_exp;
+reg  last_alarmlight_exp;
+
+reg trigger;
+
+integer i;
+integer nummismatches;
+
+reg [1:2] on_first_change ;
+
+
+initial
+begin
+trigger = 0;
+i = 0;
+nummismatches = 0;
+on_first_change = 2'b1;
+end
+
+// update real /o prevs
+
+always @(trigger)
+begin
+	alarm_prev = alarm;
+	alarmlight_prev = alarmlight;
+end
+
+// update expected /o prevs
+
+always @(trigger)
+begin
+	alarm_expected_prev = alarm_expected;
+	alarmlight_expected_prev = alarmlight_expected;
+end
+
+
+
+// expected alarm
+initial
+begin
+	alarm_expected = 1'bX;
+end 
+
+// expected alarmlight
+initial
+begin
+	alarmlight_expected = 1'bX;
+end 
+// generate trigger
+always @(alarm_expected or alarm or alarmlight_expected or alarmlight)
+begin
+	trigger <= ~trigger;
+end
+
+always @(posedge sampler_rx or negedge sampler_rx)
+begin
+`ifdef debug_tbench
+	$display("Scanning pattern %d @time = %t",i,$realtime );
+	i = i + 1;
+	$display("| expected alarm = %b | expected alarmlight = %b | ",alarm_expected_prev,alarmlight_expected_prev);
+	$display("| real alarm = %b | real alarmlight = %b | ",alarm_prev,alarmlight_prev);
+`endif
+	if (
+		( alarm_expected_prev !== 1'bx ) && ( alarm_prev !== alarm_expected_prev )
+		&& ((alarm_expected_prev !== last_alarm_exp) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port alarm :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", alarm_expected_prev);
+		$display ("     Real value = %b", alarm_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_alarm_exp = alarm_expected_prev;
+	end
+	if (
+		( alarmlight_expected_prev !== 1'bx ) && ( alarmlight_prev !== alarmlight_expected_prev )
+		&& ((alarmlight_expected_prev !== last_alarmlight_exp) ||
+			on_first_change[2])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port alarmlight :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", alarmlight_expected_prev);
+		$display ("     Real value = %b", alarmlight_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[2] = 1'b0;
+		last_alarmlight_exp = alarmlight_expected_prev;
+	end
+
+	trigger <= ~trigger;
+end
+initial 
+
+begin 
+$timeformat(-12,3," ps",6);
+#1000000;
+if (nummismatches > 0)
+	$display ("%d mismatched vectors : Simulation failed !",nummismatches);
+else
+	$display ("Simulation passed !");
+$finish;
+end 
+endmodule
+
+module timealarm_vlg_vec_tst();
+// constants                                           
+// general purpose registers
+reg [3:0] 1h_one;
+reg [3:0] 1h_ten;
+reg [3:0] 1min_one;
+reg [3:0] 1min_ten;
+reg aclimb500hz;
+reg actrclear;
+reg alon/off;
+reg [3:0] h_one;
+reg [3:0] h_ten;
+reg ldtime;
+reg [3:0] min_one;
+reg [3:0] min_ten;
+// wires                                               
+wire alarm;
+wire alarmlight;
+
+wire sampler;                             
+
+// assign statements (if any)                          
+timealarm i1 (
+// port map - connection between master ports and signals/registers   
+	.\1h_one (1h_one),
+	.\1h_ten (1h_ten),
+	.\1min_one (1min_one),
+	.\1min_ten (1min_ten),
+	.aclimb500hz(aclimb500hz),
+	.actrclear(actrclear),
+	.alarm(alarm),
+	.alarmlight(alarmlight),
+	.\alon/off (alon/off),
+	.h_one(h_one),
+	.h_ten(h_ten),
+	.ldtime(ldtime),
+	.min_one(min_one),
+	.min_ten(min_ten)
+);
+// \1h_one [ 3 ]
+initial
+begin
+	1h_one[3] = 1'b0;
+	1h_one[3] = #800000 1'b1;
+end 
+// \1h_one [ 2 ]
+initial
+begin
+	1h_one[2] = 1'b0;
+	1h_one[2] = #400000 1'b1;
+	1h_one[2] = #400000 1'b0;
+end 
+// \1h_one [ 1 ]
+initial
+begin
+	repeat(2)
+	begin
+		1h_one[1] = 1'b0;
+		1h_one[1] = #200000 1'b1;
+		# 200000;
+	end
+	1h_one[1] = 1'b0;
+end 
+// \1h_one [ 0 ]
+always
+begin
+	1h_one[0] = 1'b0;
+	1h_one[0] = #100000 1'b1;
+	#100000;
+end 
+// \1h_ten [ 3 ]
+initial
+begin
+	1h_ten[3] = 1'b0;
+	1h_ten[3] = #800000 1'b1;
+end 
+// \1h_ten [ 2 ]
+initial
+begin
+	1h_ten[2] = 1'b0;
+	1h_ten[2] = #400000 1'b1;
+	1h_ten[2] = #400000 1'b0;
+end 
+// \1h_ten [ 1 ]
+initial
+begin
+	repeat(2)
+	begin
+		1h_ten[1] = 1'b0;
+		1h_ten[1] = #200000 1'b1;
+		# 200000;
+	end
+	1h_ten[1] = 1'b0;
+end 
+// \1h_ten [ 0 ]
+always
+begin
+	1h_ten[0] = 1'b0;
+	1h_ten[0] = #100000 1'b1;
+	#100000;
+end 
+// \1min_one [ 3 ]
+initial
+begin
+	1min_one[3] = 1'b0;
+	1min_one[3] = #800000 1'b1;
+end 
+// \1min_one [ 2 ]
+initial
+begin
+	1min_one[2] = 1'b0;
+	1min_one[2] = #400000 1'b1;
+	1min_one[2] = #400000 1'b0;
+end 
+// \1min_one [ 1 ]
+initial
+begin
+	repeat(2)
+	begin
+		1min_one[1] = 1'b0;
+		1min_one[1] = #200000 1'b1;
+		# 200000;
+	end
+	1min_one[1] = 1'b0;
+end 
+// \1min_one [ 0 ]
+always
+begin
+	1min_one[0] = 1'b0;
+	1min_one[0] = #100000 1'b1;
+	#100000;
+end 
+// \1min_ten [ 3 ]
+initial
+begin
+	1min_ten[3] = 1'b0;
+	1min_ten[3] = #800000 1'b1;
+end 
+// \1min_ten [ 2 ]
+initial
+begin
+	1min_ten[2] = 1'b0;
+	1min_ten[2] = #400000 1'b1;
+	1min_ten[2] = #400000 1'b0;
+end 
+// \1min_ten [ 1 ]
+initial
+begin
+	repeat(2)
+	begin
+		1min_ten[1] = 1'b0;
+		1min_ten[1] = #200000 1'b1;
+		# 200000;
+	end
+	1min_ten[1] = 1'b0;
+end 
+// \1min_ten [ 0 ]
+always
+begin
+	1min_ten[0] = 1'b0;
+	1min_ten[0] = #100000 1'b1;
+	#100000;
+end 
+
+// aclimb500hz
+initial
+begin
+	aclimb500hz = 1'b0;
+end 
+
+// alon/off
+initial
+begin
+	alon/off = 1'b1;
+end 
+// h_one[ 3 ]
+initial
+begin
+	h_one[3] = 1'b0;
+	h_one[3] = #800000 1'b1;
+end 
+// h_one[ 2 ]
+initial
+begin
+	h_one[2] = 1'b0;
+	h_one[2] = #400000 1'b1;
+	h_one[2] = #400000 1'b0;
+end 
+// h_one[ 1 ]
+initial
+begin
+	repeat(2)
+	begin
+		h_one[1] = 1'b0;
+		h_one[1] = #200000 1'b1;
+		# 200000;
+	end
+	h_one[1] = 1'b0;
+end 
+// h_one[ 0 ]
+always
+begin
+	h_one[0] = 1'b0;
+	h_one[0] = #100000 1'b1;
+	#100000;
+end 
+// h_ten[ 3 ]
+initial
+begin
+	h_ten[3] = 1'b0;
+	h_ten[3] = #800000 1'b1;
+end 
+// h_ten[ 2 ]
+initial
+begin
+	h_ten[2] = 1'b0;
+	h_ten[2] = #400000 1'b1;
+	h_ten[2] = #400000 1'b0;
+end 
+// h_ten[ 1 ]
+initial
+begin
+	repeat(2)
+	begin
+		h_ten[1] = 1'b0;
+		h_ten[1] = #200000 1'b1;
+		# 200000;
+	end
+	h_ten[1] = 1'b0;
+end 
+// h_ten[ 0 ]
+always
+begin
+	h_ten[0] = 1'b0;
+	h_ten[0] = #100000 1'b1;
+	#100000;
+end 
+
+// ldtime
+initial
+begin
+	ldtime = 1'b0;
+	ldtime = #400000 1'b1;
+	ldtime = #400000 1'b0;
+end 
+// min_one[ 3 ]
+initial
+begin
+	min_one[3] = 1'b0;
+	min_one[3] = #800000 1'b1;
+end 
+// min_one[ 2 ]
+initial
+begin
+	min_one[2] = 1'b0;
+	min_one[2] = #400000 1'b1;
+	min_one[2] = #400000 1'b0;
+end 
+// min_one[ 1 ]
+initial
+begin
+	repeat(2)
+	begin
+		min_one[1] = 1'b0;
+		min_one[1] = #200000 1'b1;
+		# 200000;
+	end
+	min_one[1] = 1'b0;
+end 
+// min_one[ 0 ]
+always
+begin
+	min_one[0] = 1'b0;
+	min_one[0] = #100000 1'b1;
+	#100000;
+end 
+// min_ten[ 3 ]
+initial
+begin
+	min_ten[3] = 1'b0;
+	min_ten[3] = #800000 1'b1;
+end 
+// min_ten[ 2 ]
+initial
+begin
+	min_ten[2] = 1'b0;
+	min_ten[2] = #400000 1'b1;
+	min_ten[2] = #400000 1'b0;
+end 
+// min_ten[ 1 ]
+initial
+begin
+	repeat(2)
+	begin
+		min_ten[1] = 1'b0;
+		min_ten[1] = #200000 1'b1;
+		# 200000;
+	end
+	min_ten[1] = 1'b0;
+end 
+// min_ten[ 0 ]
+always
+begin
+	min_ten[0] = 1'b0;
+	min_ten[0] = #100000 1'b1;
+	#100000;
+end 
+
+timealarm_vlg_sample_tst tb_sample (
+	.1h_one(1h_one),
+	.1h_ten(1h_ten),
+	.1min_one(1min_one),
+	.1min_ten(1min_ten),
+	.aclimb500hz(aclimb500hz),
+	.actrclear(actrclear),
+	.alon/off(alon/off),
+	.h_one(h_one),
+	.h_ten(h_ten),
+	.ldtime(ldtime),
+	.min_one(min_one),
+	.min_ten(min_ten),
+	.sampler_tx(sampler)
+);
+
+timealarm_vlg_check_tst tb_out(
+	.alarm(alarm),
+	.alarmlight(alarmlight),
+	.sampler_rx(sampler)
+);
+endmodule
+

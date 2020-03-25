@@ -1,0 +1,3033 @@
+|clock
+led_min <= inst21.DB_MAX_OUTPUT_PORT_TYPE
+issettime => debonce:inst23.keyin
+clk_50mhz => fre_div:inst888.clk_50mhz
+clk_50mhz => music1:inst30.clk11
+setmin/h => debonce:inst11.keyin
+plus => switchlll:inst9l.key_in
+setalarm => debonce:inst2.keyin
+led_h <= inst22.DB_MAX_OUTPUT_PORT_TYPE
+alarmlight <= timealarm:inst.alarmlight
+loadalarm => switchlll:inst24.key_in
+clearall => switchlll:inst4.key_in
+pin_name1 => alarnswitch:inst15.alarmon
+issetalarm <= debonce:inst2.star/stop
+bell <= inst10.DB_MAX_OUTPUT_PORT_TYPE
+stopalarm1 => switchlll:inst43.key_in
+swboom => inst19.IN0
+dig[0] <= choose:inst13.outputdig[0]
+dig[1] <= choose:inst13.outputdig[1]
+dig[2] <= choose:inst13.outputdig[2]
+dig[3] <= choose:inst13.outputdig[3]
+dig[4] <= choose:inst13.outputdig[4]
+dig[5] <= choose:inst13.outputdig[5]
+dig[6] <= choose:inst13.outputdig[6]
+dig[7] <= choose:inst13.outputdig[7]
+timeseg[0] <= chooseseg:inst132.timeseg[0]
+timeseg[1] <= chooseseg:inst132.timeseg[1]
+timeseg[2] <= chooseseg:inst132.timeseg[2]
+timeseg[3] <= chooseseg:inst132.timeseg[3]
+timeseg[4] <= chooseseg:inst132.timeseg[4]
+timeseg[5] <= chooseseg:inst132.timeseg[5]
+timeseg[6] <= chooseseg:inst132.timeseg[6]
+
+
+|clock|move:inst26
+out1 <= inst18.DB_MAX_OUTPUT_PORT_TYPE
+in1 => inst158.IN0
+in => inst16.IN0
+in => inst42.IN0
+in => inst1.IN0
+issettime => inst18.IN1
+issettime => inst19.IN1
+out2 <= inst19.DB_MAX_OUTPUT_PORT_TYPE
+in2 => inst42.IN1
+out11 <= inst.DB_MAX_OUTPUT_PORT_TYPE
+on/off => inst.IN0
+on/off => inst1.IN1
+out21 <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock|debonce:inst23
+star/stop <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+keyin => switchlll:inst.key_in
+clk_5oohz => switchlll:inst.clk_500hz
+
+
+|clock|debonce:inst23|switchlll:inst
+key_out <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+clk_500hz => 7474:inst1.1CLK
+clk_500hz => 7474:inst.1CLK
+clk_500hz => 7474:inst.2CLK
+clk_500hz => 7474:inst1.2CLK
+clk_500hz => 7474:inst2.1CLK
+clk_500hz => 7474:inst2.2CLK
+key_in => 7474:inst.1D
+
+
+|clock|debonce:inst23|switchlll:inst|7474:inst1
+1Q <= 9.DB_MAX_OUTPUT_PORT_TYPE
+1CLRN => 9.ACLR
+1CLK => 9.CLK
+1D => 9.DATAIN
+1PRN => 9.PRESET
+1QN <= 16.DB_MAX_OUTPUT_PORT_TYPE
+2Q <= 10.DB_MAX_OUTPUT_PORT_TYPE
+2CLRN => 10.ACLR
+2CLK => 10.CLK
+2D => 10.DATAIN
+2PRN => 10.PRESET
+2QN <= 15.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock|debonce:inst23|switchlll:inst|7474:inst
+1Q <= 9.DB_MAX_OUTPUT_PORT_TYPE
+1CLRN => 9.ACLR
+1CLK => 9.CLK
+1D => 9.DATAIN
+1PRN => 9.PRESET
+1QN <= 16.DB_MAX_OUTPUT_PORT_TYPE
+2Q <= 10.DB_MAX_OUTPUT_PORT_TYPE
+2CLRN => 10.ACLR
+2CLK => 10.CLK
+2D => 10.DATAIN
+2PRN => 10.PRESET
+2QN <= 15.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock|debonce:inst23|switchlll:inst|7474:inst2
+1Q <= 9.DB_MAX_OUTPUT_PORT_TYPE
+1CLRN => 9.ACLR
+1CLK => 9.CLK
+1D => 9.DATAIN
+1PRN => 9.PRESET
+1QN <= 16.DB_MAX_OUTPUT_PORT_TYPE
+2Q <= 10.DB_MAX_OUTPUT_PORT_TYPE
+2CLRN => 10.ACLR
+2CLK => 10.CLK
+2D => 10.DATAIN
+2PRN => 10.PRESET
+2QN <= 15.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock|fre_div:inst888
+clk_500hz <= 74390:inst1.1QA
+clk_50mhz => m100:inst4.clk
+clk_1khz <= 74390:inst1.1QD
+clk_1hz <= m100:inst6.co
+
+
+|clock|fre_div:inst888|74390:inst1
+2QA <= 34.DB_MAX_OUTPUT_PORT_TYPE
+2CLR => 25.IN0
+2CLKA => 24.IN0
+2QB <= 33.DB_MAX_OUTPUT_PORT_TYPE
+2QD <= 31.DB_MAX_OUTPUT_PORT_TYPE
+2QC <= 32.DB_MAX_OUTPUT_PORT_TYPE
+2CLKB => 27.IN0
+2CLKB => 29.IN1
+1QD <= 3.DB_MAX_OUTPUT_PORT_TYPE
+1CLR => 22.IN0
+1QC <= 5.DB_MAX_OUTPUT_PORT_TYPE
+1QB <= 6.DB_MAX_OUTPUT_PORT_TYPE
+1CLKB => 20.IN1
+1CLKB => 17.IN0
+1QA <= 7.DB_MAX_OUTPUT_PORT_TYPE
+1CLKA => 23.IN0
+
+
+|clock|fre_div:inst888|m100:inst5
+co <= 74390:inst.2QD
+clk => 74390:inst.1CLKA
+
+
+|clock|fre_div:inst888|m100:inst5|74390:inst
+2QA <= 34.DB_MAX_OUTPUT_PORT_TYPE
+2CLR => 25.IN0
+2CLKA => 24.IN0
+2QB <= 33.DB_MAX_OUTPUT_PORT_TYPE
+2QD <= 31.DB_MAX_OUTPUT_PORT_TYPE
+2QC <= 32.DB_MAX_OUTPUT_PORT_TYPE
+2CLKB => 27.IN0
+2CLKB => 29.IN1
+1QD <= 3.DB_MAX_OUTPUT_PORT_TYPE
+1CLR => 22.IN0
+1QC <= 5.DB_MAX_OUTPUT_PORT_TYPE
+1QB <= 6.DB_MAX_OUTPUT_PORT_TYPE
+1CLKB => 20.IN1
+1CLKB => 17.IN0
+1QA <= 7.DB_MAX_OUTPUT_PORT_TYPE
+1CLKA => 23.IN0
+
+
+|clock|fre_div:inst888|m100:inst4
+co <= 74390:inst.2QD
+clk => 74390:inst.1CLKA
+
+
+|clock|fre_div:inst888|m100:inst4|74390:inst
+2QA <= 34.DB_MAX_OUTPUT_PORT_TYPE
+2CLR => 25.IN0
+2CLKA => 24.IN0
+2QB <= 33.DB_MAX_OUTPUT_PORT_TYPE
+2QD <= 31.DB_MAX_OUTPUT_PORT_TYPE
+2QC <= 32.DB_MAX_OUTPUT_PORT_TYPE
+2CLKB => 27.IN0
+2CLKB => 29.IN1
+1QD <= 3.DB_MAX_OUTPUT_PORT_TYPE
+1CLR => 22.IN0
+1QC <= 5.DB_MAX_OUTPUT_PORT_TYPE
+1QB <= 6.DB_MAX_OUTPUT_PORT_TYPE
+1CLKB => 20.IN1
+1CLKB => 17.IN0
+1QA <= 7.DB_MAX_OUTPUT_PORT_TYPE
+1CLKA => 23.IN0
+
+
+|clock|fre_div:inst888|m100:inst6
+co <= 74390:inst.2QD
+clk => 74390:inst.1CLKA
+
+
+|clock|fre_div:inst888|m100:inst6|74390:inst
+2QA <= 34.DB_MAX_OUTPUT_PORT_TYPE
+2CLR => 25.IN0
+2CLKA => 24.IN0
+2QB <= 33.DB_MAX_OUTPUT_PORT_TYPE
+2QD <= 31.DB_MAX_OUTPUT_PORT_TYPE
+2QC <= 32.DB_MAX_OUTPUT_PORT_TYPE
+2CLKB => 27.IN0
+2CLKB => 29.IN1
+1QD <= 3.DB_MAX_OUTPUT_PORT_TYPE
+1CLR => 22.IN0
+1QC <= 5.DB_MAX_OUTPUT_PORT_TYPE
+1QB <= 6.DB_MAX_OUTPUT_PORT_TYPE
+1CLKB => 20.IN1
+1CLKB => 17.IN0
+1QA <= 7.DB_MAX_OUTPUT_PORT_TYPE
+1CLKA => 23.IN0
+
+
+|clock|debonce:inst11
+star/stop <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+keyin => switchlll:inst.key_in
+clk_5oohz => switchlll:inst.clk_500hz
+
+
+|clock|debonce:inst11|switchlll:inst
+key_out <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+clk_500hz => 7474:inst1.1CLK
+clk_500hz => 7474:inst.1CLK
+clk_500hz => 7474:inst.2CLK
+clk_500hz => 7474:inst1.2CLK
+clk_500hz => 7474:inst2.1CLK
+clk_500hz => 7474:inst2.2CLK
+key_in => 7474:inst.1D
+
+
+|clock|debonce:inst11|switchlll:inst|7474:inst1
+1Q <= 9.DB_MAX_OUTPUT_PORT_TYPE
+1CLRN => 9.ACLR
+1CLK => 9.CLK
+1D => 9.DATAIN
+1PRN => 9.PRESET
+1QN <= 16.DB_MAX_OUTPUT_PORT_TYPE
+2Q <= 10.DB_MAX_OUTPUT_PORT_TYPE
+2CLRN => 10.ACLR
+2CLK => 10.CLK
+2D => 10.DATAIN
+2PRN => 10.PRESET
+2QN <= 15.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock|debonce:inst11|switchlll:inst|7474:inst
+1Q <= 9.DB_MAX_OUTPUT_PORT_TYPE
+1CLRN => 9.ACLR
+1CLK => 9.CLK
+1D => 9.DATAIN
+1PRN => 9.PRESET
+1QN <= 16.DB_MAX_OUTPUT_PORT_TYPE
+2Q <= 10.DB_MAX_OUTPUT_PORT_TYPE
+2CLRN => 10.ACLR
+2CLK => 10.CLK
+2D => 10.DATAIN
+2PRN => 10.PRESET
+2QN <= 15.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock|debonce:inst11|switchlll:inst|7474:inst2
+1Q <= 9.DB_MAX_OUTPUT_PORT_TYPE
+1CLRN => 9.ACLR
+1CLK => 9.CLK
+1D => 9.DATAIN
+1PRN => 9.PRESET
+1QN <= 16.DB_MAX_OUTPUT_PORT_TYPE
+2Q <= 10.DB_MAX_OUTPUT_PORT_TYPE
+2CLRN => 10.ACLR
+2CLK => 10.CLK
+2D => 10.DATAIN
+2PRN => 10.PRESET
+2QN <= 15.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock|switchlll:inst9l
+key_out <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+clk_500hz => 7474:inst1.1CLK
+clk_500hz => 7474:inst.1CLK
+clk_500hz => 7474:inst.2CLK
+clk_500hz => 7474:inst1.2CLK
+clk_500hz => 7474:inst2.1CLK
+clk_500hz => 7474:inst2.2CLK
+key_in => 7474:inst.1D
+
+
+|clock|switchlll:inst9l|7474:inst1
+1Q <= 9.DB_MAX_OUTPUT_PORT_TYPE
+1CLRN => 9.ACLR
+1CLK => 9.CLK
+1D => 9.DATAIN
+1PRN => 9.PRESET
+1QN <= 16.DB_MAX_OUTPUT_PORT_TYPE
+2Q <= 10.DB_MAX_OUTPUT_PORT_TYPE
+2CLRN => 10.ACLR
+2CLK => 10.CLK
+2D => 10.DATAIN
+2PRN => 10.PRESET
+2QN <= 15.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock|switchlll:inst9l|7474:inst
+1Q <= 9.DB_MAX_OUTPUT_PORT_TYPE
+1CLRN => 9.ACLR
+1CLK => 9.CLK
+1D => 9.DATAIN
+1PRN => 9.PRESET
+1QN <= 16.DB_MAX_OUTPUT_PORT_TYPE
+2Q <= 10.DB_MAX_OUTPUT_PORT_TYPE
+2CLRN => 10.ACLR
+2CLK => 10.CLK
+2D => 10.DATAIN
+2PRN => 10.PRESET
+2QN <= 15.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock|switchlll:inst9l|7474:inst2
+1Q <= 9.DB_MAX_OUTPUT_PORT_TYPE
+1CLRN => 9.ACLR
+1CLK => 9.CLK
+1D => 9.DATAIN
+1PRN => 9.PRESET
+1QN <= 16.DB_MAX_OUTPUT_PORT_TYPE
+2Q <= 10.DB_MAX_OUTPUT_PORT_TYPE
+2CLRN => 10.ACLR
+2CLK => 10.CLK
+2D => 10.DATAIN
+2PRN => 10.PRESET
+2QN <= 15.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock|debonce:inst2
+star/stop <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+keyin => switchlll:inst.key_in
+clk_5oohz => switchlll:inst.clk_500hz
+
+
+|clock|debonce:inst2|switchlll:inst
+key_out <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+clk_500hz => 7474:inst1.1CLK
+clk_500hz => 7474:inst.1CLK
+clk_500hz => 7474:inst.2CLK
+clk_500hz => 7474:inst1.2CLK
+clk_500hz => 7474:inst2.1CLK
+clk_500hz => 7474:inst2.2CLK
+key_in => 7474:inst.1D
+
+
+|clock|debonce:inst2|switchlll:inst|7474:inst1
+1Q <= 9.DB_MAX_OUTPUT_PORT_TYPE
+1CLRN => 9.ACLR
+1CLK => 9.CLK
+1D => 9.DATAIN
+1PRN => 9.PRESET
+1QN <= 16.DB_MAX_OUTPUT_PORT_TYPE
+2Q <= 10.DB_MAX_OUTPUT_PORT_TYPE
+2CLRN => 10.ACLR
+2CLK => 10.CLK
+2D => 10.DATAIN
+2PRN => 10.PRESET
+2QN <= 15.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock|debonce:inst2|switchlll:inst|7474:inst
+1Q <= 9.DB_MAX_OUTPUT_PORT_TYPE
+1CLRN => 9.ACLR
+1CLK => 9.CLK
+1D => 9.DATAIN
+1PRN => 9.PRESET
+1QN <= 16.DB_MAX_OUTPUT_PORT_TYPE
+2Q <= 10.DB_MAX_OUTPUT_PORT_TYPE
+2CLRN => 10.ACLR
+2CLK => 10.CLK
+2D => 10.DATAIN
+2PRN => 10.PRESET
+2QN <= 15.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock|debonce:inst2|switchlll:inst|7474:inst2
+1Q <= 9.DB_MAX_OUTPUT_PORT_TYPE
+1CLRN => 9.ACLR
+1CLK => 9.CLK
+1D => 9.DATAIN
+1PRN => 9.PRESET
+1QN <= 16.DB_MAX_OUTPUT_PORT_TYPE
+2Q <= 10.DB_MAX_OUTPUT_PORT_TYPE
+2CLRN => 10.ACLR
+2CLK => 10.CLK
+2D => 10.DATAIN
+2PRN => 10.PRESET
+2QN <= 15.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock|move:inst25
+out1 <= inst18.DB_MAX_OUTPUT_PORT_TYPE
+in1 => inst158.IN0
+in => inst16.IN0
+in => inst42.IN0
+in => inst1.IN0
+issettime => inst18.IN1
+issettime => inst19.IN1
+out2 <= inst19.DB_MAX_OUTPUT_PORT_TYPE
+in2 => inst42.IN1
+out11 <= inst.DB_MAX_OUTPUT_PORT_TYPE
+on/off => inst.IN0
+on/off => inst1.IN1
+out21 <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock|timealarm:inst
+alarmlight <= alon/off.DB_MAX_OUTPUT_PORT_TYPE
+alon/off => alarmlight.DATAIN
+alon/off => instl.IN0
+alon/off => inst28.IN1
+alon/off => inst28.IN2
+alarm <= inst28.DB_MAX_OUTPUT_PORT_TYPE
+1min_ten[0] => inst12.IN0
+1min_ten[1] => inst13.IN0
+1min_ten[2] => inst14.IN1
+1min_ten[3] => inst15.IN1
+min_ten[0] => 74194:inst3.A
+min_ten[1] => 74194:inst3.B
+min_ten[2] => 74194:inst3.C
+min_ten[3] => 74194:inst3.D
+aclimb500hz => 74194:inst3.CLK
+aclimb500hz => switchlll:inst5.clk_500hz
+aclimb500hz => 74194:inst2.CLK
+aclimb500hz => 74194:instk.CLK
+aclimb500hz => 74194:inst1.CLK
+actrclear => switchlll:inst5.key_in
+ldtime => instl.IN1
+min_one[0] => 74194:inst2.A
+min_one[1] => 74194:inst2.B
+min_one[2] => 74194:inst2.C
+min_one[3] => 74194:inst2.D
+1min_one[0] => inst12k.IN1
+1min_one[1] => inst13k.IN1
+1min_one[2] => inst14k.IN1
+1min_one[3] => inst15k.IN1
+1h_one[0] => inst20.IN0
+1h_one[1] => inst21.IN0
+1h_one[2] => inst22.IN0
+1h_one[3] => inst23.IN0
+h_one[0] => 74194:instk.A
+h_one[1] => 74194:instk.B
+h_one[2] => 74194:instk.C
+h_one[3] => 74194:instk.D
+1h_ten[0] => inst16.IN0
+1h_ten[1] => inst17.IN1
+1h_ten[2] => inst18.IN1
+1h_ten[3] => inst19.IN1
+h_ten[0] => 74194:inst1.A
+h_ten[1] => 74194:inst1.B
+h_ten[2] => 74194:inst1.C
+h_ten[3] => 74194:inst1.D
+
+
+|clock|timealarm:inst|74194:inst3
+QD <= 38.DB_MAX_OUTPUT_PORT_TYPE
+CLRN => 38.ACLR
+CLRN => 39.ACLR
+CLRN => 40.ACLR
+CLRN => 41.ACLR
+CLK => 38.CLK
+CLK => 39.CLK
+CLK => 40.CLK
+CLK => 41.CLK
+S1 => 13.IN0
+S1 => 52.IN0
+S1 => 56.IN0
+S1 => 60.IN0
+S1 => 64.IN0
+S1 => 63.IN1
+S1 => 59.IN2
+S1 => 55.IN2
+S1 => 51.IN2
+S0 => 12.IN0
+S0 => 50.IN1
+S0 => 62.IN0
+S0 => 63.IN0
+S0 => 58.IN1
+S0 => 59.IN1
+S0 => 54.IN1
+S0 => 55.IN1
+S0 => 51.IN1
+SLSI => 52.IN2
+SRSI => 62.IN2
+A => 63.IN2
+B => 59.IN0
+C => 55.IN0
+D => 51.IN0
+QC <= 39.DB_MAX_OUTPUT_PORT_TYPE
+QB <= 40.DB_MAX_OUTPUT_PORT_TYPE
+QA <= 41.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock|timealarm:inst|switchlll:inst5
+key_out <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+clk_500hz => 7474:inst1.1CLK
+clk_500hz => 7474:inst.1CLK
+clk_500hz => 7474:inst.2CLK
+clk_500hz => 7474:inst1.2CLK
+clk_500hz => 7474:inst2.1CLK
+clk_500hz => 7474:inst2.2CLK
+key_in => 7474:inst.1D
+
+
+|clock|timealarm:inst|switchlll:inst5|7474:inst1
+1Q <= 9.DB_MAX_OUTPUT_PORT_TYPE
+1CLRN => 9.ACLR
+1CLK => 9.CLK
+1D => 9.DATAIN
+1PRN => 9.PRESET
+1QN <= 16.DB_MAX_OUTPUT_PORT_TYPE
+2Q <= 10.DB_MAX_OUTPUT_PORT_TYPE
+2CLRN => 10.ACLR
+2CLK => 10.CLK
+2D => 10.DATAIN
+2PRN => 10.PRESET
+2QN <= 15.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock|timealarm:inst|switchlll:inst5|7474:inst
+1Q <= 9.DB_MAX_OUTPUT_PORT_TYPE
+1CLRN => 9.ACLR
+1CLK => 9.CLK
+1D => 9.DATAIN
+1PRN => 9.PRESET
+1QN <= 16.DB_MAX_OUTPUT_PORT_TYPE
+2Q <= 10.DB_MAX_OUTPUT_PORT_TYPE
+2CLRN => 10.ACLR
+2CLK => 10.CLK
+2D => 10.DATAIN
+2PRN => 10.PRESET
+2QN <= 15.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock|timealarm:inst|switchlll:inst5|7474:inst2
+1Q <= 9.DB_MAX_OUTPUT_PORT_TYPE
+1CLRN => 9.ACLR
+1CLK => 9.CLK
+1D => 9.DATAIN
+1PRN => 9.PRESET
+1QN <= 16.DB_MAX_OUTPUT_PORT_TYPE
+2Q <= 10.DB_MAX_OUTPUT_PORT_TYPE
+2CLRN => 10.ACLR
+2CLK => 10.CLK
+2D => 10.DATAIN
+2PRN => 10.PRESET
+2QN <= 15.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock|timealarm:inst|74194:inst2
+QD <= 38.DB_MAX_OUTPUT_PORT_TYPE
+CLRN => 38.ACLR
+CLRN => 39.ACLR
+CLRN => 40.ACLR
+CLRN => 41.ACLR
+CLK => 38.CLK
+CLK => 39.CLK
+CLK => 40.CLK
+CLK => 41.CLK
+S1 => 13.IN0
+S1 => 52.IN0
+S1 => 56.IN0
+S1 => 60.IN0
+S1 => 64.IN0
+S1 => 63.IN1
+S1 => 59.IN2
+S1 => 55.IN2
+S1 => 51.IN2
+S0 => 12.IN0
+S0 => 50.IN1
+S0 => 62.IN0
+S0 => 63.IN0
+S0 => 58.IN1
+S0 => 59.IN1
+S0 => 54.IN1
+S0 => 55.IN1
+S0 => 51.IN1
+SLSI => 52.IN2
+SRSI => 62.IN2
+A => 63.IN2
+B => 59.IN0
+C => 55.IN0
+D => 51.IN0
+QC <= 39.DB_MAX_OUTPUT_PORT_TYPE
+QB <= 40.DB_MAX_OUTPUT_PORT_TYPE
+QA <= 41.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock|timealarm:inst|74194:instk
+QD <= 38.DB_MAX_OUTPUT_PORT_TYPE
+CLRN => 38.ACLR
+CLRN => 39.ACLR
+CLRN => 40.ACLR
+CLRN => 41.ACLR
+CLK => 38.CLK
+CLK => 39.CLK
+CLK => 40.CLK
+CLK => 41.CLK
+S1 => 13.IN0
+S1 => 52.IN0
+S1 => 56.IN0
+S1 => 60.IN0
+S1 => 64.IN0
+S1 => 63.IN1
+S1 => 59.IN2
+S1 => 55.IN2
+S1 => 51.IN2
+S0 => 12.IN0
+S0 => 50.IN1
+S0 => 62.IN0
+S0 => 63.IN0
+S0 => 58.IN1
+S0 => 59.IN1
+S0 => 54.IN1
+S0 => 55.IN1
+S0 => 51.IN1
+SLSI => 52.IN2
+SRSI => 62.IN2
+A => 63.IN2
+B => 59.IN0
+C => 55.IN0
+D => 51.IN0
+QC <= 39.DB_MAX_OUTPUT_PORT_TYPE
+QB <= 40.DB_MAX_OUTPUT_PORT_TYPE
+QA <= 41.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock|timealarm:inst|74194:inst1
+QD <= 38.DB_MAX_OUTPUT_PORT_TYPE
+CLRN => 38.ACLR
+CLRN => 39.ACLR
+CLRN => 40.ACLR
+CLRN => 41.ACLR
+CLK => 38.CLK
+CLK => 39.CLK
+CLK => 40.CLK
+CLK => 41.CLK
+S1 => 13.IN0
+S1 => 52.IN0
+S1 => 56.IN0
+S1 => 60.IN0
+S1 => 64.IN0
+S1 => 63.IN1
+S1 => 59.IN2
+S1 => 55.IN2
+S1 => 51.IN2
+S0 => 12.IN0
+S0 => 50.IN1
+S0 => 62.IN0
+S0 => 63.IN0
+S0 => 58.IN1
+S0 => 59.IN1
+S0 => 54.IN1
+S0 => 55.IN1
+S0 => 51.IN1
+SLSI => 52.IN2
+SRSI => 62.IN2
+A => 63.IN2
+B => 59.IN0
+C => 55.IN0
+D => 51.IN0
+QC <= 39.DB_MAX_OUTPUT_PORT_TYPE
+QB <= 40.DB_MAX_OUTPUT_PORT_TYPE
+QA <= 41.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock|switchlll:inst24
+key_out <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+clk_500hz => 7474:inst1.1CLK
+clk_500hz => 7474:inst.1CLK
+clk_500hz => 7474:inst.2CLK
+clk_500hz => 7474:inst1.2CLK
+clk_500hz => 7474:inst2.1CLK
+clk_500hz => 7474:inst2.2CLK
+key_in => 7474:inst.1D
+
+
+|clock|switchlll:inst24|7474:inst1
+1Q <= 9.DB_MAX_OUTPUT_PORT_TYPE
+1CLRN => 9.ACLR
+1CLK => 9.CLK
+1D => 9.DATAIN
+1PRN => 9.PRESET
+1QN <= 16.DB_MAX_OUTPUT_PORT_TYPE
+2Q <= 10.DB_MAX_OUTPUT_PORT_TYPE
+2CLRN => 10.ACLR
+2CLK => 10.CLK
+2D => 10.DATAIN
+2PRN => 10.PRESET
+2QN <= 15.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock|switchlll:inst24|7474:inst
+1Q <= 9.DB_MAX_OUTPUT_PORT_TYPE
+1CLRN => 9.ACLR
+1CLK => 9.CLK
+1D => 9.DATAIN
+1PRN => 9.PRESET
+1QN <= 16.DB_MAX_OUTPUT_PORT_TYPE
+2Q <= 10.DB_MAX_OUTPUT_PORT_TYPE
+2CLRN => 10.ACLR
+2CLK => 10.CLK
+2D => 10.DATAIN
+2PRN => 10.PRESET
+2QN <= 15.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock|switchlll:inst24|7474:inst2
+1Q <= 9.DB_MAX_OUTPUT_PORT_TYPE
+1CLRN => 9.ACLR
+1CLK => 9.CLK
+1D => 9.DATAIN
+1PRN => 9.PRESET
+1QN <= 16.DB_MAX_OUTPUT_PORT_TYPE
+2Q <= 10.DB_MAX_OUTPUT_PORT_TYPE
+2CLRN => 10.ACLR
+2CLK => 10.CLK
+2D => 10.DATAIN
+2PRN => 10.PRESET
+2QN <= 15.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock|switchlll:inst4
+key_out <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+clk_500hz => 7474:inst1.1CLK
+clk_500hz => 7474:inst.1CLK
+clk_500hz => 7474:inst.2CLK
+clk_500hz => 7474:inst1.2CLK
+clk_500hz => 7474:inst2.1CLK
+clk_500hz => 7474:inst2.2CLK
+key_in => 7474:inst.1D
+
+
+|clock|switchlll:inst4|7474:inst1
+1Q <= 9.DB_MAX_OUTPUT_PORT_TYPE
+1CLRN => 9.ACLR
+1CLK => 9.CLK
+1D => 9.DATAIN
+1PRN => 9.PRESET
+1QN <= 16.DB_MAX_OUTPUT_PORT_TYPE
+2Q <= 10.DB_MAX_OUTPUT_PORT_TYPE
+2CLRN => 10.ACLR
+2CLK => 10.CLK
+2D => 10.DATAIN
+2PRN => 10.PRESET
+2QN <= 15.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock|switchlll:inst4|7474:inst
+1Q <= 9.DB_MAX_OUTPUT_PORT_TYPE
+1CLRN => 9.ACLR
+1CLK => 9.CLK
+1D => 9.DATAIN
+1PRN => 9.PRESET
+1QN <= 16.DB_MAX_OUTPUT_PORT_TYPE
+2Q <= 10.DB_MAX_OUTPUT_PORT_TYPE
+2CLRN => 10.ACLR
+2CLK => 10.CLK
+2D => 10.DATAIN
+2PRN => 10.PRESET
+2QN <= 15.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock|switchlll:inst4|7474:inst2
+1Q <= 9.DB_MAX_OUTPUT_PORT_TYPE
+1CLRN => 9.ACLR
+1CLK => 9.CLK
+1D => 9.DATAIN
+1PRN => 9.PRESET
+1QN <= 16.DB_MAX_OUTPUT_PORT_TYPE
+2Q <= 10.DB_MAX_OUTPUT_PORT_TYPE
+2CLRN => 10.ACLR
+2CLK => 10.CLK
+2D => 10.DATAIN
+2PRN => 10.PRESET
+2QN <= 15.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock|alarnswitch:inst15
+out <= debonce:inst.star/stop
+alarmon => switchlll:inst1.key_in
+500hz => switchlll:inst1.clk_500hz
+500hz => debonce:inst.clk_5oohz
+clr1 => inst2.IN1
+
+
+|clock|alarnswitch:inst15|debonce:inst
+star/stop <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+keyin => switchlll:inst.key_in
+clk_5oohz => switchlll:inst.clk_500hz
+
+
+|clock|alarnswitch:inst15|debonce:inst|switchlll:inst
+key_out <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+clk_500hz => 7474:inst1.1CLK
+clk_500hz => 7474:inst.1CLK
+clk_500hz => 7474:inst.2CLK
+clk_500hz => 7474:inst1.2CLK
+clk_500hz => 7474:inst2.1CLK
+clk_500hz => 7474:inst2.2CLK
+key_in => 7474:inst.1D
+
+
+|clock|alarnswitch:inst15|debonce:inst|switchlll:inst|7474:inst1
+1Q <= 9.DB_MAX_OUTPUT_PORT_TYPE
+1CLRN => 9.ACLR
+1CLK => 9.CLK
+1D => 9.DATAIN
+1PRN => 9.PRESET
+1QN <= 16.DB_MAX_OUTPUT_PORT_TYPE
+2Q <= 10.DB_MAX_OUTPUT_PORT_TYPE
+2CLRN => 10.ACLR
+2CLK => 10.CLK
+2D => 10.DATAIN
+2PRN => 10.PRESET
+2QN <= 15.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock|alarnswitch:inst15|debonce:inst|switchlll:inst|7474:inst
+1Q <= 9.DB_MAX_OUTPUT_PORT_TYPE
+1CLRN => 9.ACLR
+1CLK => 9.CLK
+1D => 9.DATAIN
+1PRN => 9.PRESET
+1QN <= 16.DB_MAX_OUTPUT_PORT_TYPE
+2Q <= 10.DB_MAX_OUTPUT_PORT_TYPE
+2CLRN => 10.ACLR
+2CLK => 10.CLK
+2D => 10.DATAIN
+2PRN => 10.PRESET
+2QN <= 15.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock|alarnswitch:inst15|debonce:inst|switchlll:inst|7474:inst2
+1Q <= 9.DB_MAX_OUTPUT_PORT_TYPE
+1CLRN => 9.ACLR
+1CLK => 9.CLK
+1D => 9.DATAIN
+1PRN => 9.PRESET
+1QN <= 16.DB_MAX_OUTPUT_PORT_TYPE
+2Q <= 10.DB_MAX_OUTPUT_PORT_TYPE
+2CLRN => 10.ACLR
+2CLK => 10.CLK
+2D => 10.DATAIN
+2PRN => 10.PRESET
+2QN <= 15.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock|alarnswitch:inst15|switchlll:inst1
+key_out <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+clk_500hz => 7474:inst1.1CLK
+clk_500hz => 7474:inst.1CLK
+clk_500hz => 7474:inst.2CLK
+clk_500hz => 7474:inst1.2CLK
+clk_500hz => 7474:inst2.1CLK
+clk_500hz => 7474:inst2.2CLK
+key_in => 7474:inst.1D
+
+
+|clock|alarnswitch:inst15|switchlll:inst1|7474:inst1
+1Q <= 9.DB_MAX_OUTPUT_PORT_TYPE
+1CLRN => 9.ACLR
+1CLK => 9.CLK
+1D => 9.DATAIN
+1PRN => 9.PRESET
+1QN <= 16.DB_MAX_OUTPUT_PORT_TYPE
+2Q <= 10.DB_MAX_OUTPUT_PORT_TYPE
+2CLRN => 10.ACLR
+2CLK => 10.CLK
+2D => 10.DATAIN
+2PRN => 10.PRESET
+2QN <= 15.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock|alarnswitch:inst15|switchlll:inst1|7474:inst
+1Q <= 9.DB_MAX_OUTPUT_PORT_TYPE
+1CLRN => 9.ACLR
+1CLK => 9.CLK
+1D => 9.DATAIN
+1PRN => 9.PRESET
+1QN <= 16.DB_MAX_OUTPUT_PORT_TYPE
+2Q <= 10.DB_MAX_OUTPUT_PORT_TYPE
+2CLRN => 10.ACLR
+2CLK => 10.CLK
+2D => 10.DATAIN
+2PRN => 10.PRESET
+2QN <= 15.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock|alarnswitch:inst15|switchlll:inst1|7474:inst2
+1Q <= 9.DB_MAX_OUTPUT_PORT_TYPE
+1CLRN => 9.ACLR
+1CLK => 9.CLK
+1D => 9.DATAIN
+1PRN => 9.PRESET
+1QN <= 16.DB_MAX_OUTPUT_PORT_TYPE
+2Q <= 10.DB_MAX_OUTPUT_PORT_TYPE
+2CLRN => 10.ACLR
+2CLK => 10.CLK
+2D => 10.DATAIN
+2PRN => 10.PRESET
+2QN <= 15.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock|cntall:inst20
+boomcarry <= inst156.DB_MAX_OUTPUT_PORT_TYPE
+clearall => inst13.IN0
+clearall => inst22.IN1
+clearall => inst19.IN0
+pause_min => inst6565.IN0
+pause_min => inst5555556.IN0
+min => inst6565.IN1
+clk => inst2.CLK
+clk => 74390:inst.1CLKA
+pause_h => inst15.IN0
+pause_h => inst16.IN0
+h_one[0] <= 2ge[0].DB_MAX_OUTPUT_PORT_TYPE
+h_one[1] <= 2ge[1].DB_MAX_OUTPUT_PORT_TYPE
+h_one[2] <= 2ge[2].DB_MAX_OUTPUT_PORT_TYPE
+h_one[3] <= 2ge[3].DB_MAX_OUTPUT_PORT_TYPE
+h => inst16.IN1
+h_ten[0] <= 2shi[0].DB_MAX_OUTPUT_PORT_TYPE
+h_ten[1] <= 2shi[1].DB_MAX_OUTPUT_PORT_TYPE
+h_ten[2] <= 2shi[2].DB_MAX_OUTPUT_PORT_TYPE
+h_ten[3] <= 2shi[3].DB_MAX_OUTPUT_PORT_TYPE
+min_one[0] <= 1ge[0].DB_MAX_OUTPUT_PORT_TYPE
+min_one[1] <= 1ge[1].DB_MAX_OUTPUT_PORT_TYPE
+min_one[2] <= 1ge[2].DB_MAX_OUTPUT_PORT_TYPE
+min_one[3] <= 1ge[3].DB_MAX_OUTPUT_PORT_TYPE
+min_ten[0] <= 1shi[0].DB_MAX_OUTPUT_PORT_TYPE
+min_ten[1] <= 1shi[1].DB_MAX_OUTPUT_PORT_TYPE
+min_ten[2] <= 1shi[2].DB_MAX_OUTPUT_PORT_TYPE
+min_ten[3] <= 1shi[3].DB_MAX_OUTPUT_PORT_TYPE
+sec_one[0] <= ge[0].DB_MAX_OUTPUT_PORT_TYPE
+sec_one[1] <= ge[1].DB_MAX_OUTPUT_PORT_TYPE
+sec_one[2] <= ge[2].DB_MAX_OUTPUT_PORT_TYPE
+sec_one[3] <= ge[3].DB_MAX_OUTPUT_PORT_TYPE
+sec_ten[0] <= shi[0].DB_MAX_OUTPUT_PORT_TYPE
+sec_ten[1] <= shi[1].DB_MAX_OUTPUT_PORT_TYPE
+sec_ten[2] <= shi[2].DB_MAX_OUTPUT_PORT_TYPE
+sec_ten[3] <= shi[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock|cntall:inst20|74390:inst7
+2QA <= 34.DB_MAX_OUTPUT_PORT_TYPE
+2CLR => 25.IN0
+2CLKA => 24.IN0
+2QB <= 33.DB_MAX_OUTPUT_PORT_TYPE
+2QD <= 31.DB_MAX_OUTPUT_PORT_TYPE
+2QC <= 32.DB_MAX_OUTPUT_PORT_TYPE
+2CLKB => 27.IN0
+2CLKB => 29.IN1
+1QD <= 3.DB_MAX_OUTPUT_PORT_TYPE
+1CLR => 22.IN0
+1QC <= 5.DB_MAX_OUTPUT_PORT_TYPE
+1QB <= 6.DB_MAX_OUTPUT_PORT_TYPE
+1CLKB => 20.IN1
+1CLKB => 17.IN0
+1QA <= 7.DB_MAX_OUTPUT_PORT_TYPE
+1CLKA => 23.IN0
+
+
+|clock|cntall:inst20|74390:inst
+2QA <= 34.DB_MAX_OUTPUT_PORT_TYPE
+2CLR => 25.IN0
+2CLKA => 24.IN0
+2QB <= 33.DB_MAX_OUTPUT_PORT_TYPE
+2QD <= 31.DB_MAX_OUTPUT_PORT_TYPE
+2QC <= 32.DB_MAX_OUTPUT_PORT_TYPE
+2CLKB => 27.IN0
+2CLKB => 29.IN1
+1QD <= 3.DB_MAX_OUTPUT_PORT_TYPE
+1CLR => 22.IN0
+1QC <= 5.DB_MAX_OUTPUT_PORT_TYPE
+1QB <= 6.DB_MAX_OUTPUT_PORT_TYPE
+1CLKB => 20.IN1
+1CLKB => 17.IN0
+1QA <= 7.DB_MAX_OUTPUT_PORT_TYPE
+1CLKA => 23.IN0
+
+
+|clock|cntall:inst20|74390:inst11
+2QA <= 34.DB_MAX_OUTPUT_PORT_TYPE
+2CLR => 25.IN0
+2CLKA => 24.IN0
+2QB <= 33.DB_MAX_OUTPUT_PORT_TYPE
+2QD <= 31.DB_MAX_OUTPUT_PORT_TYPE
+2QC <= 32.DB_MAX_OUTPUT_PORT_TYPE
+2CLKB => 27.IN0
+2CLKB => 29.IN1
+1QD <= 3.DB_MAX_OUTPUT_PORT_TYPE
+1CLR => 22.IN0
+1QC <= 5.DB_MAX_OUTPUT_PORT_TYPE
+1QB <= 6.DB_MAX_OUTPUT_PORT_TYPE
+1CLKB => 20.IN1
+1CLKB => 17.IN0
+1QA <= 7.DB_MAX_OUTPUT_PORT_TYPE
+1CLKA => 23.IN0
+
+
+|clock|alarmcntall:inst27
+h_one[0] <= 2ge[0].DB_MAX_OUTPUT_PORT_TYPE
+h_one[1] <= 2ge[1].DB_MAX_OUTPUT_PORT_TYPE
+h_one[2] <= 2ge[2].DB_MAX_OUTPUT_PORT_TYPE
+h_one[3] <= 2ge[3].DB_MAX_OUTPUT_PORT_TYPE
+clearall => inst19.IN0
+clearall => inst13.IN0
+clearall => inst22.IN1
+pause_h => inst16.IN0
+pause_h => inst15.IN0
+h1 => inst16.IN1
+h_ten[0] <= 2shi[0].DB_MAX_OUTPUT_PORT_TYPE
+h_ten[1] <= 2shi[1].DB_MAX_OUTPUT_PORT_TYPE
+h_ten[2] <= 2shi[2].DB_MAX_OUTPUT_PORT_TYPE
+h_ten[3] <= 2shi[3].DB_MAX_OUTPUT_PORT_TYPE
+min_one[0] <= 1ge[0].DB_MAX_OUTPUT_PORT_TYPE
+min_one[1] <= 1ge[1].DB_MAX_OUTPUT_PORT_TYPE
+min_one[2] <= 1ge[2].DB_MAX_OUTPUT_PORT_TYPE
+min_one[3] <= 1ge[3].DB_MAX_OUTPUT_PORT_TYPE
+pause_min => inst6565.IN0
+pause_min => inst5555556.IN0
+min1 => inst6565.IN1
+min_ten[0] <= 1shi[0].DB_MAX_OUTPUT_PORT_TYPE
+min_ten[1] <= 1shi[1].DB_MAX_OUTPUT_PORT_TYPE
+min_ten[2] <= 1shi[2].DB_MAX_OUTPUT_PORT_TYPE
+min_ten[3] <= 1shi[3].DB_MAX_OUTPUT_PORT_TYPE
+sec_one[0] <= ge[0].DB_MAX_OUTPUT_PORT_TYPE
+sec_one[1] <= ge[1].DB_MAX_OUTPUT_PORT_TYPE
+sec_one[2] <= ge[2].DB_MAX_OUTPUT_PORT_TYPE
+sec_one[3] <= ge[3].DB_MAX_OUTPUT_PORT_TYPE
+clk => inst2.CLK
+clk => 74390:inst.1CLKA
+sec_ten[0] <= shi[0].DB_MAX_OUTPUT_PORT_TYPE
+sec_ten[1] <= shi[1].DB_MAX_OUTPUT_PORT_TYPE
+sec_ten[2] <= shi[2].DB_MAX_OUTPUT_PORT_TYPE
+sec_ten[3] <= shi[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock|alarmcntall:inst27|74390:inst11
+2QA <= 34.DB_MAX_OUTPUT_PORT_TYPE
+2CLR => 25.IN0
+2CLKA => 24.IN0
+2QB <= 33.DB_MAX_OUTPUT_PORT_TYPE
+2QD <= 31.DB_MAX_OUTPUT_PORT_TYPE
+2QC <= 32.DB_MAX_OUTPUT_PORT_TYPE
+2CLKB => 27.IN0
+2CLKB => 29.IN1
+1QD <= 3.DB_MAX_OUTPUT_PORT_TYPE
+1CLR => 22.IN0
+1QC <= 5.DB_MAX_OUTPUT_PORT_TYPE
+1QB <= 6.DB_MAX_OUTPUT_PORT_TYPE
+1CLKB => 20.IN1
+1CLKB => 17.IN0
+1QA <= 7.DB_MAX_OUTPUT_PORT_TYPE
+1CLKA => 23.IN0
+
+
+|clock|alarmcntall:inst27|74390:inst7
+2QA <= 34.DB_MAX_OUTPUT_PORT_TYPE
+2CLR => 25.IN0
+2CLKA => 24.IN0
+2QB <= 33.DB_MAX_OUTPUT_PORT_TYPE
+2QD <= 31.DB_MAX_OUTPUT_PORT_TYPE
+2QC <= 32.DB_MAX_OUTPUT_PORT_TYPE
+2CLKB => 27.IN0
+2CLKB => 29.IN1
+1QD <= 3.DB_MAX_OUTPUT_PORT_TYPE
+1CLR => 22.IN0
+1QC <= 5.DB_MAX_OUTPUT_PORT_TYPE
+1QB <= 6.DB_MAX_OUTPUT_PORT_TYPE
+1CLKB => 20.IN1
+1CLKB => 17.IN0
+1QA <= 7.DB_MAX_OUTPUT_PORT_TYPE
+1CLKA => 23.IN0
+
+
+|clock|alarmcntall:inst27|74390:inst
+2QA <= 34.DB_MAX_OUTPUT_PORT_TYPE
+2CLR => 25.IN0
+2CLKA => 24.IN0
+2QB <= 33.DB_MAX_OUTPUT_PORT_TYPE
+2QD <= 31.DB_MAX_OUTPUT_PORT_TYPE
+2QC <= 32.DB_MAX_OUTPUT_PORT_TYPE
+2CLKB => 27.IN0
+2CLKB => 29.IN1
+1QD <= 3.DB_MAX_OUTPUT_PORT_TYPE
+1CLR => 22.IN0
+1QC <= 5.DB_MAX_OUTPUT_PORT_TYPE
+1QB <= 6.DB_MAX_OUTPUT_PORT_TYPE
+1CLKB => 20.IN1
+1CLKB => 17.IN0
+1QA <= 7.DB_MAX_OUTPUT_PORT_TYPE
+1CLKA => 23.IN0
+
+
+|clock|music1:inst30
+bell1 <= inst10.DB_MAX_OUTPUT_PORT_TYPE
+clk11 => fre_div:inst11.clk_50mhz
+clk11 => La:inst18.clik
+clk11 => Sol:inst17.clik
+clk11 => Fa:inst16.clik
+clk11 => Mi:inst15.clik
+clk11 => Do:inst13.clik
+clk11 => Re:inst14.clik
+
+
+|clock|music1:inst30|74151:inst3
+c => f74151:sub.c
+b => f74151:sub.b
+a => f74151:sub.a
+d[0] => f74151:sub.d[0]
+d[1] => ~NO_FANOUT~
+d[2] => f74151:sub.d[2]
+d[3] => ~NO_FANOUT~
+d[4] => f74151:sub.d[4]
+d[5] => ~NO_FANOUT~
+d[6] => ~NO_FANOUT~
+d[7] => ~NO_FANOUT~
+gn => f74151:sub.gn
+y <= f74151:sub.y
+wn <= f74151:sub.wn
+
+
+|clock|music1:inst30|74151:inst3|f74151:sub
+WN <= 85.DB_MAX_OUTPUT_PORT_TYPE
+D0 => 59.IN0
+A => 19.IN0
+D1 => 60.IN0
+B => 17.IN0
+D2 => 61.IN0
+D3 => 62.IN0
+C => 16.IN0
+D4 => 63.IN0
+D5 => 64.IN0
+D6 => 65.IN0
+D7 => 66.IN0
+GN => 13.IN0
+y <= 82.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock|music1:inst30|74138:inst
+Y7N <= 22.DB_MAX_OUTPUT_PORT_TYPE
+G1 => 8.IN0
+G2BN => 1.IN1
+G2AN => 1.IN2
+B => 10.IN0
+A => 9.IN0
+C => 11.IN0
+Y6N <= 21.DB_MAX_OUTPUT_PORT_TYPE
+Y5N <= 20.DB_MAX_OUTPUT_PORT_TYPE
+Y4N <= 19.DB_MAX_OUTPUT_PORT_TYPE
+Y3N <= 18.DB_MAX_OUTPUT_PORT_TYPE
+Y2N <= 17.DB_MAX_OUTPUT_PORT_TYPE
+Y1N <= 16.DB_MAX_OUTPUT_PORT_TYPE
+Y0N <= 15.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock|music1:inst30|74390:inst21
+2QA <= 34.DB_MAX_OUTPUT_PORT_TYPE
+2CLR => 25.IN0
+2CLKA => 24.IN0
+2QB <= 33.DB_MAX_OUTPUT_PORT_TYPE
+2QD <= 31.DB_MAX_OUTPUT_PORT_TYPE
+2QC <= 32.DB_MAX_OUTPUT_PORT_TYPE
+2CLKB => 27.IN0
+2CLKB => 29.IN1
+1QD <= 3.DB_MAX_OUTPUT_PORT_TYPE
+1CLR => 22.IN0
+1QC <= 5.DB_MAX_OUTPUT_PORT_TYPE
+1QB <= 6.DB_MAX_OUTPUT_PORT_TYPE
+1CLKB => 20.IN1
+1CLKB => 17.IN0
+1QA <= 7.DB_MAX_OUTPUT_PORT_TYPE
+1CLKA => 23.IN0
+
+
+|clock|music1:inst30|cnt8:instd
+carry <= 74390:inst.1QD
+clock => inst1.CLK
+clock => 74390:inst.1CLKA
+q[0] <= 74390:inst.1QA
+q[1] <= 74390:inst.1QB
+q[2] <= 74390:inst.1QC
+
+
+|clock|music1:inst30|cnt8:instd|74390:inst
+2QA <= 34.DB_MAX_OUTPUT_PORT_TYPE
+2CLR => 25.IN0
+2CLKA => 24.IN0
+2QB <= 33.DB_MAX_OUTPUT_PORT_TYPE
+2QD <= 31.DB_MAX_OUTPUT_PORT_TYPE
+2QC <= 32.DB_MAX_OUTPUT_PORT_TYPE
+2CLKB => 27.IN0
+2CLKB => 29.IN1
+1QD <= 3.DB_MAX_OUTPUT_PORT_TYPE
+1CLR => 22.IN0
+1QC <= 5.DB_MAX_OUTPUT_PORT_TYPE
+1QB <= 6.DB_MAX_OUTPUT_PORT_TYPE
+1CLKB => 20.IN1
+1CLKB => 17.IN0
+1QA <= 7.DB_MAX_OUTPUT_PORT_TYPE
+1CLKA => 23.IN0
+
+
+|clock|music1:inst30|m100:inst12
+co <= 74390:inst.2QD
+clk => 74390:inst.1CLKA
+
+
+|clock|music1:inst30|m100:inst12|74390:inst
+2QA <= 34.DB_MAX_OUTPUT_PORT_TYPE
+2CLR => 25.IN0
+2CLKA => 24.IN0
+2QB <= 33.DB_MAX_OUTPUT_PORT_TYPE
+2QD <= 31.DB_MAX_OUTPUT_PORT_TYPE
+2QC <= 32.DB_MAX_OUTPUT_PORT_TYPE
+2CLKB => 27.IN0
+2CLKB => 29.IN1
+1QD <= 3.DB_MAX_OUTPUT_PORT_TYPE
+1CLR => 22.IN0
+1QC <= 5.DB_MAX_OUTPUT_PORT_TYPE
+1QB <= 6.DB_MAX_OUTPUT_PORT_TYPE
+1CLKB => 20.IN1
+1CLKB => 17.IN0
+1QA <= 7.DB_MAX_OUTPUT_PORT_TYPE
+1CLKA => 23.IN0
+
+
+|clock|music1:inst30|fre_div:inst11
+clk_500hz <= 74390:inst1.1QA
+clk_50mhz => m100:inst4.clk
+clk_1khz <= 74390:inst1.1QD
+clk_1hz <= m100:inst6.co
+
+
+|clock|music1:inst30|fre_div:inst11|74390:inst1
+2QA <= 34.DB_MAX_OUTPUT_PORT_TYPE
+2CLR => 25.IN0
+2CLKA => 24.IN0
+2QB <= 33.DB_MAX_OUTPUT_PORT_TYPE
+2QD <= 31.DB_MAX_OUTPUT_PORT_TYPE
+2QC <= 32.DB_MAX_OUTPUT_PORT_TYPE
+2CLKB => 27.IN0
+2CLKB => 29.IN1
+1QD <= 3.DB_MAX_OUTPUT_PORT_TYPE
+1CLR => 22.IN0
+1QC <= 5.DB_MAX_OUTPUT_PORT_TYPE
+1QB <= 6.DB_MAX_OUTPUT_PORT_TYPE
+1CLKB => 20.IN1
+1CLKB => 17.IN0
+1QA <= 7.DB_MAX_OUTPUT_PORT_TYPE
+1CLKA => 23.IN0
+
+
+|clock|music1:inst30|fre_div:inst11|m100:inst5
+co <= 74390:inst.2QD
+clk => 74390:inst.1CLKA
+
+
+|clock|music1:inst30|fre_div:inst11|m100:inst5|74390:inst
+2QA <= 34.DB_MAX_OUTPUT_PORT_TYPE
+2CLR => 25.IN0
+2CLKA => 24.IN0
+2QB <= 33.DB_MAX_OUTPUT_PORT_TYPE
+2QD <= 31.DB_MAX_OUTPUT_PORT_TYPE
+2QC <= 32.DB_MAX_OUTPUT_PORT_TYPE
+2CLKB => 27.IN0
+2CLKB => 29.IN1
+1QD <= 3.DB_MAX_OUTPUT_PORT_TYPE
+1CLR => 22.IN0
+1QC <= 5.DB_MAX_OUTPUT_PORT_TYPE
+1QB <= 6.DB_MAX_OUTPUT_PORT_TYPE
+1CLKB => 20.IN1
+1CLKB => 17.IN0
+1QA <= 7.DB_MAX_OUTPUT_PORT_TYPE
+1CLKA => 23.IN0
+
+
+|clock|music1:inst30|fre_div:inst11|m100:inst4
+co <= 74390:inst.2QD
+clk => 74390:inst.1CLKA
+
+
+|clock|music1:inst30|fre_div:inst11|m100:inst4|74390:inst
+2QA <= 34.DB_MAX_OUTPUT_PORT_TYPE
+2CLR => 25.IN0
+2CLKA => 24.IN0
+2QB <= 33.DB_MAX_OUTPUT_PORT_TYPE
+2QD <= 31.DB_MAX_OUTPUT_PORT_TYPE
+2QC <= 32.DB_MAX_OUTPUT_PORT_TYPE
+2CLKB => 27.IN0
+2CLKB => 29.IN1
+1QD <= 3.DB_MAX_OUTPUT_PORT_TYPE
+1CLR => 22.IN0
+1QC <= 5.DB_MAX_OUTPUT_PORT_TYPE
+1QB <= 6.DB_MAX_OUTPUT_PORT_TYPE
+1CLKB => 20.IN1
+1CLKB => 17.IN0
+1QA <= 7.DB_MAX_OUTPUT_PORT_TYPE
+1CLKA => 23.IN0
+
+
+|clock|music1:inst30|fre_div:inst11|m100:inst6
+co <= 74390:inst.2QD
+clk => 74390:inst.1CLKA
+
+
+|clock|music1:inst30|fre_div:inst11|m100:inst6|74390:inst
+2QA <= 34.DB_MAX_OUTPUT_PORT_TYPE
+2CLR => 25.IN0
+2CLKA => 24.IN0
+2QB <= 33.DB_MAX_OUTPUT_PORT_TYPE
+2QD <= 31.DB_MAX_OUTPUT_PORT_TYPE
+2QC <= 32.DB_MAX_OUTPUT_PORT_TYPE
+2CLKB => 27.IN0
+2CLKB => 29.IN1
+1QD <= 3.DB_MAX_OUTPUT_PORT_TYPE
+1CLR => 22.IN0
+1QC <= 5.DB_MAX_OUTPUT_PORT_TYPE
+1QB <= 6.DB_MAX_OUTPUT_PORT_TYPE
+1CLKB => 20.IN1
+1CLKB => 17.IN0
+1QA <= 7.DB_MAX_OUTPUT_PORT_TYPE
+1CLKA => 23.IN0
+
+
+|clock|music1:inst30|La:inst18
+clik_La <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+clik => m200:inst7.CLOCK1
+
+
+|clock|music1:inst30|La:inst18|m200:inst7
+carry <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+CLOCK1 => cnt8:inst.clock
+
+
+|clock|music1:inst30|La:inst18|m200:inst7|74390:inst8
+2QA <= 34.DB_MAX_OUTPUT_PORT_TYPE
+2CLR => 25.IN0
+2CLKA => 24.IN0
+2QB <= 33.DB_MAX_OUTPUT_PORT_TYPE
+2QD <= 31.DB_MAX_OUTPUT_PORT_TYPE
+2QC <= 32.DB_MAX_OUTPUT_PORT_TYPE
+2CLKB => 27.IN0
+2CLKB => 29.IN1
+1QD <= 3.DB_MAX_OUTPUT_PORT_TYPE
+1CLR => 22.IN0
+1QC <= 5.DB_MAX_OUTPUT_PORT_TYPE
+1QB <= 6.DB_MAX_OUTPUT_PORT_TYPE
+1CLKB => 20.IN1
+1CLKB => 17.IN0
+1QA <= 7.DB_MAX_OUTPUT_PORT_TYPE
+1CLKA => 23.IN0
+
+
+|clock|music1:inst30|La:inst18|m200:inst7|cnt8:inst
+carry <= 74390:inst.1QD
+clock => inst1.CLK
+clock => 74390:inst.1CLKA
+q[0] <= 74390:inst.1QA
+q[1] <= 74390:inst.1QB
+q[2] <= 74390:inst.1QC
+
+
+|clock|music1:inst30|La:inst18|m200:inst7|cnt8:inst|74390:inst
+2QA <= 34.DB_MAX_OUTPUT_PORT_TYPE
+2CLR => 25.IN0
+2CLKA => 24.IN0
+2QB <= 33.DB_MAX_OUTPUT_PORT_TYPE
+2QD <= 31.DB_MAX_OUTPUT_PORT_TYPE
+2QC <= 32.DB_MAX_OUTPUT_PORT_TYPE
+2CLKB => 27.IN0
+2CLKB => 29.IN1
+1QD <= 3.DB_MAX_OUTPUT_PORT_TYPE
+1CLR => 22.IN0
+1QC <= 5.DB_MAX_OUTPUT_PORT_TYPE
+1QB <= 6.DB_MAX_OUTPUT_PORT_TYPE
+1CLKB => 20.IN1
+1CLKB => 17.IN0
+1QA <= 7.DB_MAX_OUTPUT_PORT_TYPE
+1CLKA => 23.IN0
+
+
+|clock|music1:inst30|La:inst18|74390:inst
+2QA <= 34.DB_MAX_OUTPUT_PORT_TYPE
+2CLR => 25.IN0
+2CLKA => 24.IN0
+2QB <= 33.DB_MAX_OUTPUT_PORT_TYPE
+2QD <= 31.DB_MAX_OUTPUT_PORT_TYPE
+2QC <= 32.DB_MAX_OUTPUT_PORT_TYPE
+2CLKB => 27.IN0
+2CLKB => 29.IN1
+1QD <= 3.DB_MAX_OUTPUT_PORT_TYPE
+1CLR => 22.IN0
+1QC <= 5.DB_MAX_OUTPUT_PORT_TYPE
+1QB <= 6.DB_MAX_OUTPUT_PORT_TYPE
+1CLKB => 20.IN1
+1CLKB => 17.IN0
+1QA <= 7.DB_MAX_OUTPUT_PORT_TYPE
+1CLKA => 23.IN0
+
+
+|clock|music1:inst30|Sol:inst17
+clik_Sol <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+clik => m200:inst2.CLOCK1
+
+
+|clock|music1:inst30|Sol:inst17|m200:inst2
+carry <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+CLOCK1 => cnt8:inst.clock
+
+
+|clock|music1:inst30|Sol:inst17|m200:inst2|74390:inst8
+2QA <= 34.DB_MAX_OUTPUT_PORT_TYPE
+2CLR => 25.IN0
+2CLKA => 24.IN0
+2QB <= 33.DB_MAX_OUTPUT_PORT_TYPE
+2QD <= 31.DB_MAX_OUTPUT_PORT_TYPE
+2QC <= 32.DB_MAX_OUTPUT_PORT_TYPE
+2CLKB => 27.IN0
+2CLKB => 29.IN1
+1QD <= 3.DB_MAX_OUTPUT_PORT_TYPE
+1CLR => 22.IN0
+1QC <= 5.DB_MAX_OUTPUT_PORT_TYPE
+1QB <= 6.DB_MAX_OUTPUT_PORT_TYPE
+1CLKB => 20.IN1
+1CLKB => 17.IN0
+1QA <= 7.DB_MAX_OUTPUT_PORT_TYPE
+1CLKA => 23.IN0
+
+
+|clock|music1:inst30|Sol:inst17|m200:inst2|cnt8:inst
+carry <= 74390:inst.1QD
+clock => inst1.CLK
+clock => 74390:inst.1CLKA
+q[0] <= 74390:inst.1QA
+q[1] <= 74390:inst.1QB
+q[2] <= 74390:inst.1QC
+
+
+|clock|music1:inst30|Sol:inst17|m200:inst2|cnt8:inst|74390:inst
+2QA <= 34.DB_MAX_OUTPUT_PORT_TYPE
+2CLR => 25.IN0
+2CLKA => 24.IN0
+2QB <= 33.DB_MAX_OUTPUT_PORT_TYPE
+2QD <= 31.DB_MAX_OUTPUT_PORT_TYPE
+2QC <= 32.DB_MAX_OUTPUT_PORT_TYPE
+2CLKB => 27.IN0
+2CLKB => 29.IN1
+1QD <= 3.DB_MAX_OUTPUT_PORT_TYPE
+1CLR => 22.IN0
+1QC <= 5.DB_MAX_OUTPUT_PORT_TYPE
+1QB <= 6.DB_MAX_OUTPUT_PORT_TYPE
+1CLKB => 20.IN1
+1CLKB => 17.IN0
+1QA <= 7.DB_MAX_OUTPUT_PORT_TYPE
+1CLKA => 23.IN0
+
+
+|clock|music1:inst30|Sol:inst17|74390:inst
+2QA <= 34.DB_MAX_OUTPUT_PORT_TYPE
+2CLR => 25.IN0
+2CLKA => 24.IN0
+2QB <= 33.DB_MAX_OUTPUT_PORT_TYPE
+2QD <= 31.DB_MAX_OUTPUT_PORT_TYPE
+2QC <= 32.DB_MAX_OUTPUT_PORT_TYPE
+2CLKB => 27.IN0
+2CLKB => 29.IN1
+1QD <= 3.DB_MAX_OUTPUT_PORT_TYPE
+1CLR => 22.IN0
+1QC <= 5.DB_MAX_OUTPUT_PORT_TYPE
+1QB <= 6.DB_MAX_OUTPUT_PORT_TYPE
+1CLKB => 20.IN1
+1CLKB => 17.IN0
+1QA <= 7.DB_MAX_OUTPUT_PORT_TYPE
+1CLKA => 23.IN0
+
+
+|clock|music1:inst30|74151:inst4
+c => f74151:sub.c
+b => f74151:sub.b
+a => f74151:sub.a
+d[0] => f74151:sub.d[0]
+d[1] => ~NO_FANOUT~
+d[2] => f74151:sub.d[2]
+d[3] => ~NO_FANOUT~
+d[4] => f74151:sub.d[4]
+d[5] => ~NO_FANOUT~
+d[6] => f74151:sub.d[6]
+d[7] => ~NO_FANOUT~
+gn => f74151:sub.gn
+y <= f74151:sub.y
+wn <= f74151:sub.wn
+
+
+|clock|music1:inst30|74151:inst4|f74151:sub
+WN <= 85.DB_MAX_OUTPUT_PORT_TYPE
+D0 => 59.IN0
+A => 19.IN0
+D1 => 60.IN0
+B => 17.IN0
+D2 => 61.IN0
+D3 => 62.IN0
+C => 16.IN0
+D4 => 63.IN0
+D5 => 64.IN0
+D6 => 65.IN0
+D7 => 66.IN0
+GN => 13.IN0
+y <= 82.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock|music1:inst30|Fa:inst16
+clik_Fa <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+clik => m200:inst7.CLOCK1
+
+
+|clock|music1:inst30|Fa:inst16|m200:inst7
+carry <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+CLOCK1 => cnt8:inst.clock
+
+
+|clock|music1:inst30|Fa:inst16|m200:inst7|74390:inst8
+2QA <= 34.DB_MAX_OUTPUT_PORT_TYPE
+2CLR => 25.IN0
+2CLKA => 24.IN0
+2QB <= 33.DB_MAX_OUTPUT_PORT_TYPE
+2QD <= 31.DB_MAX_OUTPUT_PORT_TYPE
+2QC <= 32.DB_MAX_OUTPUT_PORT_TYPE
+2CLKB => 27.IN0
+2CLKB => 29.IN1
+1QD <= 3.DB_MAX_OUTPUT_PORT_TYPE
+1CLR => 22.IN0
+1QC <= 5.DB_MAX_OUTPUT_PORT_TYPE
+1QB <= 6.DB_MAX_OUTPUT_PORT_TYPE
+1CLKB => 20.IN1
+1CLKB => 17.IN0
+1QA <= 7.DB_MAX_OUTPUT_PORT_TYPE
+1CLKA => 23.IN0
+
+
+|clock|music1:inst30|Fa:inst16|m200:inst7|cnt8:inst
+carry <= 74390:inst.1QD
+clock => inst1.CLK
+clock => 74390:inst.1CLKA
+q[0] <= 74390:inst.1QA
+q[1] <= 74390:inst.1QB
+q[2] <= 74390:inst.1QC
+
+
+|clock|music1:inst30|Fa:inst16|m200:inst7|cnt8:inst|74390:inst
+2QA <= 34.DB_MAX_OUTPUT_PORT_TYPE
+2CLR => 25.IN0
+2CLKA => 24.IN0
+2QB <= 33.DB_MAX_OUTPUT_PORT_TYPE
+2QD <= 31.DB_MAX_OUTPUT_PORT_TYPE
+2QC <= 32.DB_MAX_OUTPUT_PORT_TYPE
+2CLKB => 27.IN0
+2CLKB => 29.IN1
+1QD <= 3.DB_MAX_OUTPUT_PORT_TYPE
+1CLR => 22.IN0
+1QC <= 5.DB_MAX_OUTPUT_PORT_TYPE
+1QB <= 6.DB_MAX_OUTPUT_PORT_TYPE
+1CLKB => 20.IN1
+1CLKB => 17.IN0
+1QA <= 7.DB_MAX_OUTPUT_PORT_TYPE
+1CLKA => 23.IN0
+
+
+|clock|music1:inst30|Fa:inst16|74390:inst
+2QA <= 34.DB_MAX_OUTPUT_PORT_TYPE
+2CLR => 25.IN0
+2CLKA => 24.IN0
+2QB <= 33.DB_MAX_OUTPUT_PORT_TYPE
+2QD <= 31.DB_MAX_OUTPUT_PORT_TYPE
+2QC <= 32.DB_MAX_OUTPUT_PORT_TYPE
+2CLKB => 27.IN0
+2CLKB => 29.IN1
+1QD <= 3.DB_MAX_OUTPUT_PORT_TYPE
+1CLR => 22.IN0
+1QC <= 5.DB_MAX_OUTPUT_PORT_TYPE
+1QB <= 6.DB_MAX_OUTPUT_PORT_TYPE
+1CLKB => 20.IN1
+1CLKB => 17.IN0
+1QA <= 7.DB_MAX_OUTPUT_PORT_TYPE
+1CLKA => 23.IN0
+
+
+|clock|music1:inst30|Mi:inst15
+clik_Mi <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+clik => m200:inst7.CLOCK1
+
+
+|clock|music1:inst30|Mi:inst15|m200:inst7
+carry <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+CLOCK1 => cnt8:inst.clock
+
+
+|clock|music1:inst30|Mi:inst15|m200:inst7|74390:inst8
+2QA <= 34.DB_MAX_OUTPUT_PORT_TYPE
+2CLR => 25.IN0
+2CLKA => 24.IN0
+2QB <= 33.DB_MAX_OUTPUT_PORT_TYPE
+2QD <= 31.DB_MAX_OUTPUT_PORT_TYPE
+2QC <= 32.DB_MAX_OUTPUT_PORT_TYPE
+2CLKB => 27.IN0
+2CLKB => 29.IN1
+1QD <= 3.DB_MAX_OUTPUT_PORT_TYPE
+1CLR => 22.IN0
+1QC <= 5.DB_MAX_OUTPUT_PORT_TYPE
+1QB <= 6.DB_MAX_OUTPUT_PORT_TYPE
+1CLKB => 20.IN1
+1CLKB => 17.IN0
+1QA <= 7.DB_MAX_OUTPUT_PORT_TYPE
+1CLKA => 23.IN0
+
+
+|clock|music1:inst30|Mi:inst15|m200:inst7|cnt8:inst
+carry <= 74390:inst.1QD
+clock => inst1.CLK
+clock => 74390:inst.1CLKA
+q[0] <= 74390:inst.1QA
+q[1] <= 74390:inst.1QB
+q[2] <= 74390:inst.1QC
+
+
+|clock|music1:inst30|Mi:inst15|m200:inst7|cnt8:inst|74390:inst
+2QA <= 34.DB_MAX_OUTPUT_PORT_TYPE
+2CLR => 25.IN0
+2CLKA => 24.IN0
+2QB <= 33.DB_MAX_OUTPUT_PORT_TYPE
+2QD <= 31.DB_MAX_OUTPUT_PORT_TYPE
+2QC <= 32.DB_MAX_OUTPUT_PORT_TYPE
+2CLKB => 27.IN0
+2CLKB => 29.IN1
+1QD <= 3.DB_MAX_OUTPUT_PORT_TYPE
+1CLR => 22.IN0
+1QC <= 5.DB_MAX_OUTPUT_PORT_TYPE
+1QB <= 6.DB_MAX_OUTPUT_PORT_TYPE
+1CLKB => 20.IN1
+1CLKB => 17.IN0
+1QA <= 7.DB_MAX_OUTPUT_PORT_TYPE
+1CLKA => 23.IN0
+
+
+|clock|music1:inst30|Mi:inst15|74390:inst
+2QA <= 34.DB_MAX_OUTPUT_PORT_TYPE
+2CLR => 25.IN0
+2CLKA => 24.IN0
+2QB <= 33.DB_MAX_OUTPUT_PORT_TYPE
+2QD <= 31.DB_MAX_OUTPUT_PORT_TYPE
+2QC <= 32.DB_MAX_OUTPUT_PORT_TYPE
+2CLKB => 27.IN0
+2CLKB => 29.IN1
+1QD <= 3.DB_MAX_OUTPUT_PORT_TYPE
+1CLR => 22.IN0
+1QC <= 5.DB_MAX_OUTPUT_PORT_TYPE
+1QB <= 6.DB_MAX_OUTPUT_PORT_TYPE
+1CLKB => 20.IN1
+1CLKB => 17.IN0
+1QA <= 7.DB_MAX_OUTPUT_PORT_TYPE
+1CLKA => 23.IN0
+
+
+|clock|music1:inst30|74151:inst2
+c => f74151:sub.c
+b => f74151:sub.b
+a => f74151:sub.a
+d[0] => f74151:sub.d[0]
+d[1] => ~NO_FANOUT~
+d[2] => f74151:sub.d[2]
+d[3] => ~NO_FANOUT~
+d[4] => f74151:sub.d[4]
+d[5] => ~NO_FANOUT~
+d[6] => f74151:sub.d[6]
+d[7] => ~NO_FANOUT~
+gn => f74151:sub.gn
+y <= f74151:sub.y
+wn <= f74151:sub.wn
+
+
+|clock|music1:inst30|74151:inst2|f74151:sub
+WN <= 85.DB_MAX_OUTPUT_PORT_TYPE
+D0 => 59.IN0
+A => 19.IN0
+D1 => 60.IN0
+B => 17.IN0
+D2 => 61.IN0
+D3 => 62.IN0
+C => 16.IN0
+D4 => 63.IN0
+D5 => 64.IN0
+D6 => 65.IN0
+D7 => 66.IN0
+GN => 13.IN0
+y <= 82.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock|music1:inst30|Do:inst13
+clik_250hz <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+clik => m200:inst10.CLOCK1
+
+
+|clock|music1:inst30|Do:inst13|m200:inst10
+carry <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+CLOCK1 => cnt8:inst.clock
+
+
+|clock|music1:inst30|Do:inst13|m200:inst10|74390:inst8
+2QA <= 34.DB_MAX_OUTPUT_PORT_TYPE
+2CLR => 25.IN0
+2CLKA => 24.IN0
+2QB <= 33.DB_MAX_OUTPUT_PORT_TYPE
+2QD <= 31.DB_MAX_OUTPUT_PORT_TYPE
+2QC <= 32.DB_MAX_OUTPUT_PORT_TYPE
+2CLKB => 27.IN0
+2CLKB => 29.IN1
+1QD <= 3.DB_MAX_OUTPUT_PORT_TYPE
+1CLR => 22.IN0
+1QC <= 5.DB_MAX_OUTPUT_PORT_TYPE
+1QB <= 6.DB_MAX_OUTPUT_PORT_TYPE
+1CLKB => 20.IN1
+1CLKB => 17.IN0
+1QA <= 7.DB_MAX_OUTPUT_PORT_TYPE
+1CLKA => 23.IN0
+
+
+|clock|music1:inst30|Do:inst13|m200:inst10|cnt8:inst
+carry <= 74390:inst.1QD
+clock => inst1.CLK
+clock => 74390:inst.1CLKA
+q[0] <= 74390:inst.1QA
+q[1] <= 74390:inst.1QB
+q[2] <= 74390:inst.1QC
+
+
+|clock|music1:inst30|Do:inst13|m200:inst10|cnt8:inst|74390:inst
+2QA <= 34.DB_MAX_OUTPUT_PORT_TYPE
+2CLR => 25.IN0
+2CLKA => 24.IN0
+2QB <= 33.DB_MAX_OUTPUT_PORT_TYPE
+2QD <= 31.DB_MAX_OUTPUT_PORT_TYPE
+2QC <= 32.DB_MAX_OUTPUT_PORT_TYPE
+2CLKB => 27.IN0
+2CLKB => 29.IN1
+1QD <= 3.DB_MAX_OUTPUT_PORT_TYPE
+1CLR => 22.IN0
+1QC <= 5.DB_MAX_OUTPUT_PORT_TYPE
+1QB <= 6.DB_MAX_OUTPUT_PORT_TYPE
+1CLKB => 20.IN1
+1CLKB => 17.IN0
+1QA <= 7.DB_MAX_OUTPUT_PORT_TYPE
+1CLKA => 23.IN0
+
+
+|clock|music1:inst30|Do:inst13|74390:inst
+2QA <= 34.DB_MAX_OUTPUT_PORT_TYPE
+2CLR => 25.IN0
+2CLKA => 24.IN0
+2QB <= 33.DB_MAX_OUTPUT_PORT_TYPE
+2QD <= 31.DB_MAX_OUTPUT_PORT_TYPE
+2QC <= 32.DB_MAX_OUTPUT_PORT_TYPE
+2CLKB => 27.IN0
+2CLKB => 29.IN1
+1QD <= 3.DB_MAX_OUTPUT_PORT_TYPE
+1CLR => 22.IN0
+1QC <= 5.DB_MAX_OUTPUT_PORT_TYPE
+1QB <= 6.DB_MAX_OUTPUT_PORT_TYPE
+1CLKB => 20.IN1
+1CLKB => 17.IN0
+1QA <= 7.DB_MAX_OUTPUT_PORT_TYPE
+1CLKA => 23.IN0
+
+
+|clock|music1:inst30|74151:inst5
+c => f74151:sub.c
+b => f74151:sub.b
+a => f74151:sub.a
+d[0] => f74151:sub.d[0]
+d[1] => ~NO_FANOUT~
+d[2] => f74151:sub.d[2]
+d[3] => ~NO_FANOUT~
+d[4] => f74151:sub.d[4]
+d[5] => ~NO_FANOUT~
+d[6] => ~NO_FANOUT~
+d[7] => ~NO_FANOUT~
+gn => f74151:sub.gn
+y <= f74151:sub.y
+wn <= f74151:sub.wn
+
+
+|clock|music1:inst30|74151:inst5|f74151:sub
+WN <= 85.DB_MAX_OUTPUT_PORT_TYPE
+D0 => 59.IN0
+A => 19.IN0
+D1 => 60.IN0
+B => 17.IN0
+D2 => 61.IN0
+D3 => 62.IN0
+C => 16.IN0
+D4 => 63.IN0
+D5 => 64.IN0
+D6 => 65.IN0
+D7 => 66.IN0
+GN => 13.IN0
+y <= 82.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock|music1:inst30|Re:inst14
+clik_Re <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+clik => m200:inst9.CLOCK1
+
+
+|clock|music1:inst30|Re:inst14|m200:inst9
+carry <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+CLOCK1 => cnt8:inst.clock
+
+
+|clock|music1:inst30|Re:inst14|m200:inst9|74390:inst8
+2QA <= 34.DB_MAX_OUTPUT_PORT_TYPE
+2CLR => 25.IN0
+2CLKA => 24.IN0
+2QB <= 33.DB_MAX_OUTPUT_PORT_TYPE
+2QD <= 31.DB_MAX_OUTPUT_PORT_TYPE
+2QC <= 32.DB_MAX_OUTPUT_PORT_TYPE
+2CLKB => 27.IN0
+2CLKB => 29.IN1
+1QD <= 3.DB_MAX_OUTPUT_PORT_TYPE
+1CLR => 22.IN0
+1QC <= 5.DB_MAX_OUTPUT_PORT_TYPE
+1QB <= 6.DB_MAX_OUTPUT_PORT_TYPE
+1CLKB => 20.IN1
+1CLKB => 17.IN0
+1QA <= 7.DB_MAX_OUTPUT_PORT_TYPE
+1CLKA => 23.IN0
+
+
+|clock|music1:inst30|Re:inst14|m200:inst9|cnt8:inst
+carry <= 74390:inst.1QD
+clock => inst1.CLK
+clock => 74390:inst.1CLKA
+q[0] <= 74390:inst.1QA
+q[1] <= 74390:inst.1QB
+q[2] <= 74390:inst.1QC
+
+
+|clock|music1:inst30|Re:inst14|m200:inst9|cnt8:inst|74390:inst
+2QA <= 34.DB_MAX_OUTPUT_PORT_TYPE
+2CLR => 25.IN0
+2CLKA => 24.IN0
+2QB <= 33.DB_MAX_OUTPUT_PORT_TYPE
+2QD <= 31.DB_MAX_OUTPUT_PORT_TYPE
+2QC <= 32.DB_MAX_OUTPUT_PORT_TYPE
+2CLKB => 27.IN0
+2CLKB => 29.IN1
+1QD <= 3.DB_MAX_OUTPUT_PORT_TYPE
+1CLR => 22.IN0
+1QC <= 5.DB_MAX_OUTPUT_PORT_TYPE
+1QB <= 6.DB_MAX_OUTPUT_PORT_TYPE
+1CLKB => 20.IN1
+1CLKB => 17.IN0
+1QA <= 7.DB_MAX_OUTPUT_PORT_TYPE
+1CLKA => 23.IN0
+
+
+|clock|music1:inst30|Re:inst14|74390:inst
+2QA <= 34.DB_MAX_OUTPUT_PORT_TYPE
+2CLR => 25.IN0
+2CLKA => 24.IN0
+2QB <= 33.DB_MAX_OUTPUT_PORT_TYPE
+2QD <= 31.DB_MAX_OUTPUT_PORT_TYPE
+2QC <= 32.DB_MAX_OUTPUT_PORT_TYPE
+2CLKB => 27.IN0
+2CLKB => 29.IN1
+1QD <= 3.DB_MAX_OUTPUT_PORT_TYPE
+1CLR => 22.IN0
+1QC <= 5.DB_MAX_OUTPUT_PORT_TYPE
+1QB <= 6.DB_MAX_OUTPUT_PORT_TYPE
+1CLKB => 20.IN1
+1CLKB => 17.IN0
+1QA <= 7.DB_MAX_OUTPUT_PORT_TYPE
+1CLKA => 23.IN0
+
+
+|clock|music1:inst30|74151:inst7
+c => f74151:sub.c
+b => f74151:sub.b
+a => f74151:sub.a
+d[0] => f74151:sub.d[0]
+d[1] => ~NO_FANOUT~
+d[2] => f74151:sub.d[2]
+d[3] => ~NO_FANOUT~
+d[4] => f74151:sub.d[4]
+d[5] => ~NO_FANOUT~
+d[6] => ~NO_FANOUT~
+d[7] => ~NO_FANOUT~
+gn => f74151:sub.gn
+y <= f74151:sub.y
+wn <= f74151:sub.wn
+
+
+|clock|music1:inst30|74151:inst7|f74151:sub
+WN <= 85.DB_MAX_OUTPUT_PORT_TYPE
+D0 => 59.IN0
+A => 19.IN0
+D1 => 60.IN0
+B => 17.IN0
+D2 => 61.IN0
+D3 => 62.IN0
+C => 16.IN0
+D4 => 63.IN0
+D5 => 64.IN0
+D6 => 65.IN0
+D7 => 66.IN0
+GN => 13.IN0
+y <= 82.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock|music1:inst30|74151:inst6
+c => f74151:sub.c
+b => f74151:sub.b
+a => f74151:sub.a
+d[0] => f74151:sub.d[0]
+d[1] => ~NO_FANOUT~
+d[2] => f74151:sub.d[2]
+d[3] => ~NO_FANOUT~
+d[4] => f74151:sub.d[4]
+d[5] => ~NO_FANOUT~
+d[6] => f74151:sub.d[6]
+d[7] => ~NO_FANOUT~
+gn => f74151:sub.gn
+y <= f74151:sub.y
+wn <= f74151:sub.wn
+
+
+|clock|music1:inst30|74151:inst6|f74151:sub
+WN <= 85.DB_MAX_OUTPUT_PORT_TYPE
+D0 => 59.IN0
+A => 19.IN0
+D1 => 60.IN0
+B => 17.IN0
+D2 => 61.IN0
+D3 => 62.IN0
+C => 16.IN0
+D4 => 63.IN0
+D5 => 64.IN0
+D6 => 65.IN0
+D7 => 66.IN0
+GN => 13.IN0
+y <= 82.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock|music1:inst30|74151:inst8
+c => f74151:sub.c
+b => f74151:sub.b
+a => f74151:sub.a
+d[0] => f74151:sub.d[0]
+d[1] => ~NO_FANOUT~
+d[2] => f74151:sub.d[2]
+d[3] => ~NO_FANOUT~
+d[4] => f74151:sub.d[4]
+d[5] => ~NO_FANOUT~
+d[6] => f74151:sub.d[6]
+d[7] => ~NO_FANOUT~
+gn => f74151:sub.gn
+y <= f74151:sub.y
+wn <= f74151:sub.wn
+
+
+|clock|music1:inst30|74151:inst8|f74151:sub
+WN <= 85.DB_MAX_OUTPUT_PORT_TYPE
+D0 => 59.IN0
+A => 19.IN0
+D1 => 60.IN0
+B => 17.IN0
+D2 => 61.IN0
+D3 => 62.IN0
+C => 16.IN0
+D4 => 63.IN0
+D5 => 64.IN0
+D6 => 65.IN0
+D7 => 66.IN0
+GN => 13.IN0
+y <= 82.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock|music1:inst30|74151:inst9
+c => f74151:sub.c
+b => f74151:sub.b
+a => f74151:sub.a
+d[0] => f74151:sub.d[0]
+d[1] => ~NO_FANOUT~
+d[2] => f74151:sub.d[2]
+d[3] => ~NO_FANOUT~
+d[4] => f74151:sub.d[4]
+d[5] => ~NO_FANOUT~
+d[6] => ~NO_FANOUT~
+d[7] => ~NO_FANOUT~
+gn => f74151:sub.gn
+y <= f74151:sub.y
+wn <= f74151:sub.wn
+
+
+|clock|music1:inst30|74151:inst9|f74151:sub
+WN <= 85.DB_MAX_OUTPUT_PORT_TYPE
+D0 => 59.IN0
+A => 19.IN0
+D1 => 60.IN0
+B => 17.IN0
+D2 => 61.IN0
+D3 => 62.IN0
+C => 16.IN0
+D4 => 63.IN0
+D5 => 64.IN0
+D6 => 65.IN0
+D7 => 66.IN0
+GN => 13.IN0
+y <= 82.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock|timedelay:inst8
+delay <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+stopalarm => inst5.IN1
+hz => cnt60:inst2.clik
+clr => cnt60:inst2.clear
+
+
+|clock|timedelay:inst8|cnt60:inst2
+carry <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+shi[0] <= 74390:inst.2QA
+shi[1] <= 74390:inst.2QB
+shi[2] <= 74390:inst.2QC
+shi[3] <= 74390:inst.2QD
+ge[0] <= 74390:inst.1QA
+ge[1] <= 74390:inst.1QB
+ge[2] <= 74390:inst.1QC
+ge[3] <= 74390:inst.1QD
+clik => inst6.IN0
+star/stop => inst6.IN1
+clear => inst7.IN1
+
+
+|clock|timedelay:inst8|cnt60:inst2|74390:inst
+2QA <= 34.DB_MAX_OUTPUT_PORT_TYPE
+2CLR => 25.IN0
+2CLKA => 24.IN0
+2QB <= 33.DB_MAX_OUTPUT_PORT_TYPE
+2QD <= 31.DB_MAX_OUTPUT_PORT_TYPE
+2QC <= 32.DB_MAX_OUTPUT_PORT_TYPE
+2CLKB => 27.IN0
+2CLKB => 29.IN1
+1QD <= 3.DB_MAX_OUTPUT_PORT_TYPE
+1CLR => 22.IN0
+1QC <= 5.DB_MAX_OUTPUT_PORT_TYPE
+1QB <= 6.DB_MAX_OUTPUT_PORT_TYPE
+1CLKB => 20.IN1
+1CLKB => 17.IN0
+1QA <= 7.DB_MAX_OUTPUT_PORT_TYPE
+1CLKA => 23.IN0
+
+
+|clock|switchlll:inst43
+key_out <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+clk_500hz => 7474:inst1.1CLK
+clk_500hz => 7474:inst.1CLK
+clk_500hz => 7474:inst.2CLK
+clk_500hz => 7474:inst1.2CLK
+clk_500hz => 7474:inst2.1CLK
+clk_500hz => 7474:inst2.2CLK
+key_in => 7474:inst.1D
+
+
+|clock|switchlll:inst43|7474:inst1
+1Q <= 9.DB_MAX_OUTPUT_PORT_TYPE
+1CLRN => 9.ACLR
+1CLK => 9.CLK
+1D => 9.DATAIN
+1PRN => 9.PRESET
+1QN <= 16.DB_MAX_OUTPUT_PORT_TYPE
+2Q <= 10.DB_MAX_OUTPUT_PORT_TYPE
+2CLRN => 10.ACLR
+2CLK => 10.CLK
+2D => 10.DATAIN
+2PRN => 10.PRESET
+2QN <= 15.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock|switchlll:inst43|7474:inst
+1Q <= 9.DB_MAX_OUTPUT_PORT_TYPE
+1CLRN => 9.ACLR
+1CLK => 9.CLK
+1D => 9.DATAIN
+1PRN => 9.PRESET
+1QN <= 16.DB_MAX_OUTPUT_PORT_TYPE
+2Q <= 10.DB_MAX_OUTPUT_PORT_TYPE
+2CLRN => 10.ACLR
+2CLK => 10.CLK
+2D => 10.DATAIN
+2PRN => 10.PRESET
+2QN <= 15.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock|switchlll:inst43|7474:inst2
+1Q <= 9.DB_MAX_OUTPUT_PORT_TYPE
+1CLRN => 9.ACLR
+1CLK => 9.CLK
+1D => 9.DATAIN
+1PRN => 9.PRESET
+1QN <= 16.DB_MAX_OUTPUT_PORT_TYPE
+2Q <= 10.DB_MAX_OUTPUT_PORT_TYPE
+2CLRN => 10.ACLR
+2CLK => 10.CLK
+2D => 10.DATAIN
+2PRN => 10.PRESET
+2QN <= 15.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock|boom:inst12
+delay <= inst.DB_MAX_OUTPUT_PORT_TYPE
+stopalarm => inst5.IN1
+clr => 74390:inst2.1CLR
+hz => inst4.IN0
+
+
+|clock|boom:inst12|74390:inst2
+2QA <= 34.DB_MAX_OUTPUT_PORT_TYPE
+2CLR => 25.IN0
+2CLKA => 24.IN0
+2QB <= 33.DB_MAX_OUTPUT_PORT_TYPE
+2QD <= 31.DB_MAX_OUTPUT_PORT_TYPE
+2QC <= 32.DB_MAX_OUTPUT_PORT_TYPE
+2CLKB => 27.IN0
+2CLKB => 29.IN1
+1QD <= 3.DB_MAX_OUTPUT_PORT_TYPE
+1CLR => 22.IN0
+1QC <= 5.DB_MAX_OUTPUT_PORT_TYPE
+1QB <= 6.DB_MAX_OUTPUT_PORT_TYPE
+1CLKB => 20.IN1
+1CLKB => 17.IN0
+1QA <= 7.DB_MAX_OUTPUT_PORT_TYPE
+1CLKA => 23.IN0
+
+
+|clock|choose:inst13
+outputdig[0] <= inst33.DB_MAX_OUTPUT_PORT_TYPE
+outputdig[1] <= inst32.DB_MAX_OUTPUT_PORT_TYPE
+outputdig[2] <= inst37.DB_MAX_OUTPUT_PORT_TYPE
+outputdig[3] <= inst36.DB_MAX_OUTPUT_PORT_TYPE
+outputdig[4] <= inst38.DB_MAX_OUTPUT_PORT_TYPE
+outputdig[5] <= inst35.DB_MAX_OUTPUT_PORT_TYPE
+outputdig[6] <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+outputdig[7] <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+dig1[0] => inst30.IN0
+dig1[1] => inst29.IN0
+dig1[2] => inst28.IN0
+dig1[3] => inst27.IN0
+dig1[4] => inst26.IN0
+dig1[5] => inst25.IN0
+dig1[6] => inst6.IN1
+dig1[7] => inst5.IN1
+switch => inst26.IN1
+switch => inst.IN0
+switch => inst30.IN1
+switch => inst29.IN1
+switch => inst27.IN1
+switch => inst25.IN1
+switch => inst28.IN1
+switch => inst6.IN0
+switch => inst5.IN0
+dig2[0] => inst22.IN0
+dig2[1] => inst21.IN0
+dig2[2] => inst20.IN0
+dig2[3] => inst19.IN0
+dig2[4] => inst18.IN0
+dig2[5] => inst17.IN0
+dig2[6] => inst2.IN0
+dig2[7] => inst1.IN0
+
+
+|clock|display:inst16
+dig[0] <= dig_select:inst8.dig[0]
+dig[1] <= dig_select:inst8.dig[1]
+dig[2] <= dig_select:inst8.dig[2]
+dig[3] <= dig_select:inst8.dig[3]
+dig[4] <= dig_select:inst8.dig[4]
+dig[5] <= dig_select:inst8.dig[5]
+dig[6] <= dig_select:inst8.dig[6]
+dig[7] <= dig_select:inst8.dig[7]
+scan_clk7 => cnt8:inst.clock
+seg[0] <= chooseseg:inst5.timeseg[0]
+seg[1] <= chooseseg:inst5.timeseg[1]
+seg[2] <= chooseseg:inst5.timeseg[2]
+seg[3] <= chooseseg:inst5.timeseg[3]
+seg[4] <= chooseseg:inst5.timeseg[4]
+seg[5] <= chooseseg:inst5.timeseg[5]
+seg[6] <= chooseseg:inst5.timeseg[6]
+h_one[0] => seg_select:inst2.h_one[0]
+h_one[1] => seg_select:inst2.h_one[1]
+h_one[2] => seg_select:inst2.h_one[2]
+h_one[3] => seg_select:inst2.h_one[3]
+h_ten[0] => seg_select:inst2.h_ten[0]
+h_ten[1] => seg_select:inst2.h_ten[1]
+h_ten[2] => seg_select:inst2.h_ten[2]
+h_ten[3] => seg_select:inst2.h_ten[3]
+min_one[0] => seg_select:inst2.min_one[0]
+min_one[1] => seg_select:inst2.min_one[1]
+min_one[2] => seg_select:inst2.min_one[2]
+min_one[3] => seg_select:inst2.min_one[3]
+min_ten[0] => seg_select:inst2.min_ten[0]
+min_ten[1] => seg_select:inst2.min_ten[1]
+min_ten[2] => seg_select:inst2.min_ten[2]
+min_ten[3] => seg_select:inst2.min_ten[3]
+sec_one[0] => seg_select:inst2.sec_one[0]
+sec_one[1] => seg_select:inst2.sec_one[1]
+sec_one[2] => seg_select:inst2.sec_one[2]
+sec_one[3] => seg_select:inst2.sec_one[3]
+sec_ten[0] => seg_select:inst2.sec_ten[0]
+sec_ten[1] => seg_select:inst2.sec_ten[1]
+sec_ten[2] => seg_select:inst2.sec_ten[2]
+sec_ten[3] => seg_select:inst2.sec_ten[3]
+
+
+|clock|display:inst16|dig_select:inst8
+dig[0] <= 74138:inst.Y0N
+dig[1] <= 74138:inst.Y1N
+dig[2] <= 74138:inst.Y2N
+dig[3] <= 74138:inst.Y3N
+dig[4] <= 74138:inst.Y4N
+dig[5] <= 74138:inst.Y5N
+dig[6] <= 74138:inst.Y6N
+dig[7] <= 74138:inst.Y7N
+add[0] => 74138:inst.A
+add[1] => 74138:inst.B
+add[2] => 74138:inst.C
+
+
+|clock|display:inst16|dig_select:inst8|74138:inst
+Y7N <= 22.DB_MAX_OUTPUT_PORT_TYPE
+G1 => 8.IN0
+G2BN => 1.IN1
+G2AN => 1.IN2
+B => 10.IN0
+A => 9.IN0
+C => 11.IN0
+Y6N <= 21.DB_MAX_OUTPUT_PORT_TYPE
+Y5N <= 20.DB_MAX_OUTPUT_PORT_TYPE
+Y4N <= 19.DB_MAX_OUTPUT_PORT_TYPE
+Y3N <= 18.DB_MAX_OUTPUT_PORT_TYPE
+Y2N <= 17.DB_MAX_OUTPUT_PORT_TYPE
+Y1N <= 16.DB_MAX_OUTPUT_PORT_TYPE
+Y0N <= 15.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock|display:inst16|cnt8:inst
+carry <= 74390:inst.1QD
+clock => inst1.CLK
+clock => 74390:inst.1CLKA
+q[0] <= 74390:inst.1QA
+q[1] <= 74390:inst.1QB
+q[2] <= 74390:inst.1QC
+
+
+|clock|display:inst16|cnt8:inst|74390:inst
+2QA <= 34.DB_MAX_OUTPUT_PORT_TYPE
+2CLR => 25.IN0
+2CLKA => 24.IN0
+2QB <= 33.DB_MAX_OUTPUT_PORT_TYPE
+2QD <= 31.DB_MAX_OUTPUT_PORT_TYPE
+2QC <= 32.DB_MAX_OUTPUT_PORT_TYPE
+2CLKB => 27.IN0
+2CLKB => 29.IN1
+1QD <= 3.DB_MAX_OUTPUT_PORT_TYPE
+1CLR => 22.IN0
+1QC <= 5.DB_MAX_OUTPUT_PORT_TYPE
+1QB <= 6.DB_MAX_OUTPUT_PORT_TYPE
+1CLKB => 20.IN1
+1CLKB => 17.IN0
+1QA <= 7.DB_MAX_OUTPUT_PORT_TYPE
+1CLKA => 23.IN0
+
+
+|clock|display:inst16|chooseseg:inst5
+timeseg[0] <= inst33.DB_MAX_OUTPUT_PORT_TYPE
+timeseg[1] <= inst32.DB_MAX_OUTPUT_PORT_TYPE
+timeseg[2] <= inst37.DB_MAX_OUTPUT_PORT_TYPE
+timeseg[3] <= inst36.DB_MAX_OUTPUT_PORT_TYPE
+timeseg[4] <= inst38.DB_MAX_OUTPUT_PORT_TYPE
+timeseg[5] <= inst35.DB_MAX_OUTPUT_PORT_TYPE
+timeseg[6] <= inst34.DB_MAX_OUTPUT_PORT_TYPE
+seg2[0] => inst30.IN0
+seg2[1] => inst29.IN0
+seg2[2] => inst28.IN0
+seg2[3] => inst27.IN0
+seg2[4] => inst26.IN0
+seg2[5] => inst25.IN0
+seg2[6] => inst23.IN1
+swi => inst26.IN1
+swi => inst31.IN0
+swi => inst23.IN0
+swi => inst30.IN1
+swi => inst29.IN1
+swi => inst27.IN1
+swi => inst25.IN1
+swi => inst28.IN1
+seg1[0] => inst22.IN0
+seg1[1] => inst21.IN0
+seg1[2] => inst20.IN0
+seg1[3] => inst19.IN0
+seg1[4] => inst18.IN0
+seg1[5] => inst17.IN0
+seg1[6] => inst16.IN1
+
+
+|clock|display:inst16|ishenggang:inst9
+ishenggang <= inst12.DB_MAX_OUTPUT_PORT_TYPE
+a[0] => inst7.IN0
+a[0] => inst3.IN0
+a[1] => inst6.IN0
+a[1] => inst2.IN0
+a[2] => inst5.IN0
+a[2] => inst1.IN0
+
+
+|clock|display:inst16|decoder:inst3
+seg[0] <= 7448:inst.OA
+seg[1] <= 7448:inst.OB
+seg[2] <= 7448:inst.OC
+seg[3] <= 7448:inst.OD
+seg[4] <= 7448:inst.OE
+seg[5] <= 7448:inst.OF
+seg[6] <= 7448:inst.OG
+d[0] => 7448:inst.A
+d[1] => 7448:inst.B
+d[2] => 7448:inst.C
+d[3] => 7448:inst.D
+
+
+|clock|display:inst16|decoder:inst3|7448:inst
+OA <= 69.DB_MAX_OUTPUT_PORT_TYPE
+B => 27.IN0
+LTN => 27.IN1
+LTN => 25.IN1
+LTN => 29.IN1
+LTN => 13.IN5
+LTN => 38.IN3
+BIN => 37.IN0
+C => 25.IN0
+D => 14.IN0
+A => 29.IN0
+RBIN => 15.IN0
+OB <= 68.DB_MAX_OUTPUT_PORT_TYPE
+OC <= 70.DB_MAX_OUTPUT_PORT_TYPE
+OD <= 67.DB_MAX_OUTPUT_PORT_TYPE
+RBON <= 13.DB_MAX_OUTPUT_PORT_TYPE
+OE <= 71.DB_MAX_OUTPUT_PORT_TYPE
+OF <= 66.DB_MAX_OUTPUT_PORT_TYPE
+OG <= 72.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock|display:inst16|seg_select:inst2
+code[0] <= select1bit:inst3.code
+code[1] <= select1bit:inst4.code
+code[2] <= select1bit:inst1.code
+code[3] <= select1bit:inst2.code
+add[0] => select1bit:inst4.add0
+add[0] => select1bit:inst3.add0
+add[0] => select1bit:inst1.add0
+add[0] => select1bit:inst2.add0
+add[1] => select1bit:inst4.add1
+add[1] => select1bit:inst3.add1
+add[1] => select1bit:inst1.add1
+add[1] => select1bit:inst2.add1
+add[2] => select1bit:inst4.add2
+add[2] => select1bit:inst3.add2
+add[2] => select1bit:inst1.add2
+add[2] => select1bit:inst2.add2
+sec_one[0] => select1bit:inst3.sec_one
+sec_one[1] => select1bit:inst4.sec_one
+sec_one[2] => select1bit:inst1.sec_one
+sec_one[3] => select1bit:inst2.sec_one
+sec_ten[0] => select1bit:inst3.sec_ten
+sec_ten[1] => select1bit:inst4.sec_ten
+sec_ten[2] => select1bit:inst1.sec_ten
+sec_ten[3] => select1bit:inst2.sec_ten
+min_one[0] => select1bit:inst3.min_one
+min_one[1] => select1bit:inst4.min_one
+min_one[2] => select1bit:inst1.min_one
+min_one[3] => select1bit:inst2.min_one
+min_ten[0] => select1bit:inst3.min_ten
+min_ten[1] => select1bit:inst4.min_ten
+min_ten[2] => select1bit:inst1.min_ten
+min_ten[3] => select1bit:inst2.min_ten
+h_one[0] => select1bit:inst3.h_one
+h_one[1] => select1bit:inst4.h_one
+h_one[2] => select1bit:inst1.h_one
+h_one[3] => select1bit:inst2.h_one
+h_ten[0] => select1bit:inst3.h_ten
+h_ten[1] => select1bit:inst4.h_ten
+h_ten[2] => select1bit:inst1.h_ten
+h_ten[3] => select1bit:inst2.h_ten
+
+
+|clock|display:inst16|seg_select:inst2|select1bit:inst4
+code <= 74151:inst.Y
+add2 => 74151:inst.C
+add1 => 74151:inst.B
+add0 => 74151:inst.A
+h_ten => 74151:inst.D5
+sec_one => 74151:inst.D0
+sec_ten => 74151:inst.D1
+h_one => 74151:inst.D4
+min_ten => 74151:inst.D3
+min_one => 74151:inst.D2
+
+
+|clock|display:inst16|seg_select:inst2|select1bit:inst4|74151:inst
+c => f74151:sub.c
+b => f74151:sub.b
+a => f74151:sub.a
+d[0] => f74151:sub.d[0]
+d[1] => f74151:sub.d[1]
+d[2] => f74151:sub.d[2]
+d[3] => f74151:sub.d[3]
+d[4] => f74151:sub.d[4]
+d[5] => f74151:sub.d[5]
+d[6] => ~NO_FANOUT~
+d[7] => ~NO_FANOUT~
+gn => f74151:sub.gn
+y <= f74151:sub.y
+wn <= f74151:sub.wn
+
+
+|clock|display:inst16|seg_select:inst2|select1bit:inst4|74151:inst|f74151:sub
+WN <= 85.DB_MAX_OUTPUT_PORT_TYPE
+D0 => 59.IN0
+A => 19.IN0
+D1 => 60.IN0
+B => 17.IN0
+D2 => 61.IN0
+D3 => 62.IN0
+C => 16.IN0
+D4 => 63.IN0
+D5 => 64.IN0
+D6 => 65.IN0
+D7 => 66.IN0
+GN => 13.IN0
+y <= 82.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock|display:inst16|seg_select:inst2|select1bit:inst3
+code <= 74151:inst.Y
+add2 => 74151:inst.C
+add1 => 74151:inst.B
+add0 => 74151:inst.A
+h_ten => 74151:inst.D5
+sec_one => 74151:inst.D0
+sec_ten => 74151:inst.D1
+h_one => 74151:inst.D4
+min_ten => 74151:inst.D3
+min_one => 74151:inst.D2
+
+
+|clock|display:inst16|seg_select:inst2|select1bit:inst3|74151:inst
+c => f74151:sub.c
+b => f74151:sub.b
+a => f74151:sub.a
+d[0] => f74151:sub.d[0]
+d[1] => f74151:sub.d[1]
+d[2] => f74151:sub.d[2]
+d[3] => f74151:sub.d[3]
+d[4] => f74151:sub.d[4]
+d[5] => f74151:sub.d[5]
+d[6] => ~NO_FANOUT~
+d[7] => ~NO_FANOUT~
+gn => f74151:sub.gn
+y <= f74151:sub.y
+wn <= f74151:sub.wn
+
+
+|clock|display:inst16|seg_select:inst2|select1bit:inst3|74151:inst|f74151:sub
+WN <= 85.DB_MAX_OUTPUT_PORT_TYPE
+D0 => 59.IN0
+A => 19.IN0
+D1 => 60.IN0
+B => 17.IN0
+D2 => 61.IN0
+D3 => 62.IN0
+C => 16.IN0
+D4 => 63.IN0
+D5 => 64.IN0
+D6 => 65.IN0
+D7 => 66.IN0
+GN => 13.IN0
+y <= 82.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock|display:inst16|seg_select:inst2|select1bit:inst1
+code <= 74151:inst.Y
+add2 => 74151:inst.C
+add1 => 74151:inst.B
+add0 => 74151:inst.A
+h_ten => 74151:inst.D5
+sec_one => 74151:inst.D0
+sec_ten => 74151:inst.D1
+h_one => 74151:inst.D4
+min_ten => 74151:inst.D3
+min_one => 74151:inst.D2
+
+
+|clock|display:inst16|seg_select:inst2|select1bit:inst1|74151:inst
+c => f74151:sub.c
+b => f74151:sub.b
+a => f74151:sub.a
+d[0] => f74151:sub.d[0]
+d[1] => f74151:sub.d[1]
+d[2] => f74151:sub.d[2]
+d[3] => f74151:sub.d[3]
+d[4] => f74151:sub.d[4]
+d[5] => f74151:sub.d[5]
+d[6] => ~NO_FANOUT~
+d[7] => ~NO_FANOUT~
+gn => f74151:sub.gn
+y <= f74151:sub.y
+wn <= f74151:sub.wn
+
+
+|clock|display:inst16|seg_select:inst2|select1bit:inst1|74151:inst|f74151:sub
+WN <= 85.DB_MAX_OUTPUT_PORT_TYPE
+D0 => 59.IN0
+A => 19.IN0
+D1 => 60.IN0
+B => 17.IN0
+D2 => 61.IN0
+D3 => 62.IN0
+C => 16.IN0
+D4 => 63.IN0
+D5 => 64.IN0
+D6 => 65.IN0
+D7 => 66.IN0
+GN => 13.IN0
+y <= 82.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock|display:inst16|seg_select:inst2|select1bit:inst2
+code <= 74151:inst.Y
+add2 => 74151:inst.C
+add1 => 74151:inst.B
+add0 => 74151:inst.A
+h_ten => 74151:inst.D5
+sec_one => 74151:inst.D0
+sec_ten => 74151:inst.D1
+h_one => 74151:inst.D4
+min_ten => 74151:inst.D3
+min_one => 74151:inst.D2
+
+
+|clock|display:inst16|seg_select:inst2|select1bit:inst2|74151:inst
+c => f74151:sub.c
+b => f74151:sub.b
+a => f74151:sub.a
+d[0] => f74151:sub.d[0]
+d[1] => f74151:sub.d[1]
+d[2] => f74151:sub.d[2]
+d[3] => f74151:sub.d[3]
+d[4] => f74151:sub.d[4]
+d[5] => f74151:sub.d[5]
+d[6] => ~NO_FANOUT~
+d[7] => ~NO_FANOUT~
+gn => f74151:sub.gn
+y <= f74151:sub.y
+wn <= f74151:sub.wn
+
+
+|clock|display:inst16|seg_select:inst2|select1bit:inst2|74151:inst|f74151:sub
+WN <= 85.DB_MAX_OUTPUT_PORT_TYPE
+D0 => 59.IN0
+A => 19.IN0
+D1 => 60.IN0
+B => 17.IN0
+D2 => 61.IN0
+D3 => 62.IN0
+C => 16.IN0
+D4 => 63.IN0
+D5 => 64.IN0
+D6 => 65.IN0
+D7 => 66.IN0
+GN => 13.IN0
+y <= 82.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock|display:inst5
+dig[0] <= dig_select:inst8.dig[0]
+dig[1] <= dig_select:inst8.dig[1]
+dig[2] <= dig_select:inst8.dig[2]
+dig[3] <= dig_select:inst8.dig[3]
+dig[4] <= dig_select:inst8.dig[4]
+dig[5] <= dig_select:inst8.dig[5]
+dig[6] <= dig_select:inst8.dig[6]
+dig[7] <= dig_select:inst8.dig[7]
+scan_clk7 => cnt8:inst.clock
+seg[0] <= chooseseg:inst5.timeseg[0]
+seg[1] <= chooseseg:inst5.timeseg[1]
+seg[2] <= chooseseg:inst5.timeseg[2]
+seg[3] <= chooseseg:inst5.timeseg[3]
+seg[4] <= chooseseg:inst5.timeseg[4]
+seg[5] <= chooseseg:inst5.timeseg[5]
+seg[6] <= chooseseg:inst5.timeseg[6]
+h_one[0] => seg_select:inst2.h_one[0]
+h_one[1] => seg_select:inst2.h_one[1]
+h_one[2] => seg_select:inst2.h_one[2]
+h_one[3] => seg_select:inst2.h_one[3]
+h_ten[0] => seg_select:inst2.h_ten[0]
+h_ten[1] => seg_select:inst2.h_ten[1]
+h_ten[2] => seg_select:inst2.h_ten[2]
+h_ten[3] => seg_select:inst2.h_ten[3]
+min_one[0] => seg_select:inst2.min_one[0]
+min_one[1] => seg_select:inst2.min_one[1]
+min_one[2] => seg_select:inst2.min_one[2]
+min_one[3] => seg_select:inst2.min_one[3]
+min_ten[0] => seg_select:inst2.min_ten[0]
+min_ten[1] => seg_select:inst2.min_ten[1]
+min_ten[2] => seg_select:inst2.min_ten[2]
+min_ten[3] => seg_select:inst2.min_ten[3]
+sec_one[0] => seg_select:inst2.sec_one[0]
+sec_one[1] => seg_select:inst2.sec_one[1]
+sec_one[2] => seg_select:inst2.sec_one[2]
+sec_one[3] => seg_select:inst2.sec_one[3]
+sec_ten[0] => seg_select:inst2.sec_ten[0]
+sec_ten[1] => seg_select:inst2.sec_ten[1]
+sec_ten[2] => seg_select:inst2.sec_ten[2]
+sec_ten[3] => seg_select:inst2.sec_ten[3]
+
+
+|clock|display:inst5|dig_select:inst8
+dig[0] <= 74138:inst.Y0N
+dig[1] <= 74138:inst.Y1N
+dig[2] <= 74138:inst.Y2N
+dig[3] <= 74138:inst.Y3N
+dig[4] <= 74138:inst.Y4N
+dig[5] <= 74138:inst.Y5N
+dig[6] <= 74138:inst.Y6N
+dig[7] <= 74138:inst.Y7N
+add[0] => 74138:inst.A
+add[1] => 74138:inst.B
+add[2] => 74138:inst.C
+
+
+|clock|display:inst5|dig_select:inst8|74138:inst
+Y7N <= 22.DB_MAX_OUTPUT_PORT_TYPE
+G1 => 8.IN0
+G2BN => 1.IN1
+G2AN => 1.IN2
+B => 10.IN0
+A => 9.IN0
+C => 11.IN0
+Y6N <= 21.DB_MAX_OUTPUT_PORT_TYPE
+Y5N <= 20.DB_MAX_OUTPUT_PORT_TYPE
+Y4N <= 19.DB_MAX_OUTPUT_PORT_TYPE
+Y3N <= 18.DB_MAX_OUTPUT_PORT_TYPE
+Y2N <= 17.DB_MAX_OUTPUT_PORT_TYPE
+Y1N <= 16.DB_MAX_OUTPUT_PORT_TYPE
+Y0N <= 15.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock|display:inst5|cnt8:inst
+carry <= 74390:inst.1QD
+clock => inst1.CLK
+clock => 74390:inst.1CLKA
+q[0] <= 74390:inst.1QA
+q[1] <= 74390:inst.1QB
+q[2] <= 74390:inst.1QC
+
+
+|clock|display:inst5|cnt8:inst|74390:inst
+2QA <= 34.DB_MAX_OUTPUT_PORT_TYPE
+2CLR => 25.IN0
+2CLKA => 24.IN0
+2QB <= 33.DB_MAX_OUTPUT_PORT_TYPE
+2QD <= 31.DB_MAX_OUTPUT_PORT_TYPE
+2QC <= 32.DB_MAX_OUTPUT_PORT_TYPE
+2CLKB => 27.IN0
+2CLKB => 29.IN1
+1QD <= 3.DB_MAX_OUTPUT_PORT_TYPE
+1CLR => 22.IN0
+1QC <= 5.DB_MAX_OUTPUT_PORT_TYPE
+1QB <= 6.DB_MAX_OUTPUT_PORT_TYPE
+1CLKB => 20.IN1
+1CLKB => 17.IN0
+1QA <= 7.DB_MAX_OUTPUT_PORT_TYPE
+1CLKA => 23.IN0
+
+
+|clock|display:inst5|chooseseg:inst5
+timeseg[0] <= inst33.DB_MAX_OUTPUT_PORT_TYPE
+timeseg[1] <= inst32.DB_MAX_OUTPUT_PORT_TYPE
+timeseg[2] <= inst37.DB_MAX_OUTPUT_PORT_TYPE
+timeseg[3] <= inst36.DB_MAX_OUTPUT_PORT_TYPE
+timeseg[4] <= inst38.DB_MAX_OUTPUT_PORT_TYPE
+timeseg[5] <= inst35.DB_MAX_OUTPUT_PORT_TYPE
+timeseg[6] <= inst34.DB_MAX_OUTPUT_PORT_TYPE
+seg2[0] => inst30.IN0
+seg2[1] => inst29.IN0
+seg2[2] => inst28.IN0
+seg2[3] => inst27.IN0
+seg2[4] => inst26.IN0
+seg2[5] => inst25.IN0
+seg2[6] => inst23.IN1
+swi => inst26.IN1
+swi => inst31.IN0
+swi => inst23.IN0
+swi => inst30.IN1
+swi => inst29.IN1
+swi => inst27.IN1
+swi => inst25.IN1
+swi => inst28.IN1
+seg1[0] => inst22.IN0
+seg1[1] => inst21.IN0
+seg1[2] => inst20.IN0
+seg1[3] => inst19.IN0
+seg1[4] => inst18.IN0
+seg1[5] => inst17.IN0
+seg1[6] => inst16.IN1
+
+
+|clock|display:inst5|ishenggang:inst9
+ishenggang <= inst12.DB_MAX_OUTPUT_PORT_TYPE
+a[0] => inst7.IN0
+a[0] => inst3.IN0
+a[1] => inst6.IN0
+a[1] => inst2.IN0
+a[2] => inst5.IN0
+a[2] => inst1.IN0
+
+
+|clock|display:inst5|decoder:inst3
+seg[0] <= 7448:inst.OA
+seg[1] <= 7448:inst.OB
+seg[2] <= 7448:inst.OC
+seg[3] <= 7448:inst.OD
+seg[4] <= 7448:inst.OE
+seg[5] <= 7448:inst.OF
+seg[6] <= 7448:inst.OG
+d[0] => 7448:inst.A
+d[1] => 7448:inst.B
+d[2] => 7448:inst.C
+d[3] => 7448:inst.D
+
+
+|clock|display:inst5|decoder:inst3|7448:inst
+OA <= 69.DB_MAX_OUTPUT_PORT_TYPE
+B => 27.IN0
+LTN => 27.IN1
+LTN => 25.IN1
+LTN => 29.IN1
+LTN => 13.IN5
+LTN => 38.IN3
+BIN => 37.IN0
+C => 25.IN0
+D => 14.IN0
+A => 29.IN0
+RBIN => 15.IN0
+OB <= 68.DB_MAX_OUTPUT_PORT_TYPE
+OC <= 70.DB_MAX_OUTPUT_PORT_TYPE
+OD <= 67.DB_MAX_OUTPUT_PORT_TYPE
+RBON <= 13.DB_MAX_OUTPUT_PORT_TYPE
+OE <= 71.DB_MAX_OUTPUT_PORT_TYPE
+OF <= 66.DB_MAX_OUTPUT_PORT_TYPE
+OG <= 72.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock|display:inst5|seg_select:inst2
+code[0] <= select1bit:inst3.code
+code[1] <= select1bit:inst4.code
+code[2] <= select1bit:inst1.code
+code[3] <= select1bit:inst2.code
+add[0] => select1bit:inst4.add0
+add[0] => select1bit:inst3.add0
+add[0] => select1bit:inst1.add0
+add[0] => select1bit:inst2.add0
+add[1] => select1bit:inst4.add1
+add[1] => select1bit:inst3.add1
+add[1] => select1bit:inst1.add1
+add[1] => select1bit:inst2.add1
+add[2] => select1bit:inst4.add2
+add[2] => select1bit:inst3.add2
+add[2] => select1bit:inst1.add2
+add[2] => select1bit:inst2.add2
+sec_one[0] => select1bit:inst3.sec_one
+sec_one[1] => select1bit:inst4.sec_one
+sec_one[2] => select1bit:inst1.sec_one
+sec_one[3] => select1bit:inst2.sec_one
+sec_ten[0] => select1bit:inst3.sec_ten
+sec_ten[1] => select1bit:inst4.sec_ten
+sec_ten[2] => select1bit:inst1.sec_ten
+sec_ten[3] => select1bit:inst2.sec_ten
+min_one[0] => select1bit:inst3.min_one
+min_one[1] => select1bit:inst4.min_one
+min_one[2] => select1bit:inst1.min_one
+min_one[3] => select1bit:inst2.min_one
+min_ten[0] => select1bit:inst3.min_ten
+min_ten[1] => select1bit:inst4.min_ten
+min_ten[2] => select1bit:inst1.min_ten
+min_ten[3] => select1bit:inst2.min_ten
+h_one[0] => select1bit:inst3.h_one
+h_one[1] => select1bit:inst4.h_one
+h_one[2] => select1bit:inst1.h_one
+h_one[3] => select1bit:inst2.h_one
+h_ten[0] => select1bit:inst3.h_ten
+h_ten[1] => select1bit:inst4.h_ten
+h_ten[2] => select1bit:inst1.h_ten
+h_ten[3] => select1bit:inst2.h_ten
+
+
+|clock|display:inst5|seg_select:inst2|select1bit:inst4
+code <= 74151:inst.Y
+add2 => 74151:inst.C
+add1 => 74151:inst.B
+add0 => 74151:inst.A
+h_ten => 74151:inst.D5
+sec_one => 74151:inst.D0
+sec_ten => 74151:inst.D1
+h_one => 74151:inst.D4
+min_ten => 74151:inst.D3
+min_one => 74151:inst.D2
+
+
+|clock|display:inst5|seg_select:inst2|select1bit:inst4|74151:inst
+c => f74151:sub.c
+b => f74151:sub.b
+a => f74151:sub.a
+d[0] => f74151:sub.d[0]
+d[1] => f74151:sub.d[1]
+d[2] => f74151:sub.d[2]
+d[3] => f74151:sub.d[3]
+d[4] => f74151:sub.d[4]
+d[5] => f74151:sub.d[5]
+d[6] => ~NO_FANOUT~
+d[7] => ~NO_FANOUT~
+gn => f74151:sub.gn
+y <= f74151:sub.y
+wn <= f74151:sub.wn
+
+
+|clock|display:inst5|seg_select:inst2|select1bit:inst4|74151:inst|f74151:sub
+WN <= 85.DB_MAX_OUTPUT_PORT_TYPE
+D0 => 59.IN0
+A => 19.IN0
+D1 => 60.IN0
+B => 17.IN0
+D2 => 61.IN0
+D3 => 62.IN0
+C => 16.IN0
+D4 => 63.IN0
+D5 => 64.IN0
+D6 => 65.IN0
+D7 => 66.IN0
+GN => 13.IN0
+y <= 82.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock|display:inst5|seg_select:inst2|select1bit:inst3
+code <= 74151:inst.Y
+add2 => 74151:inst.C
+add1 => 74151:inst.B
+add0 => 74151:inst.A
+h_ten => 74151:inst.D5
+sec_one => 74151:inst.D0
+sec_ten => 74151:inst.D1
+h_one => 74151:inst.D4
+min_ten => 74151:inst.D3
+min_one => 74151:inst.D2
+
+
+|clock|display:inst5|seg_select:inst2|select1bit:inst3|74151:inst
+c => f74151:sub.c
+b => f74151:sub.b
+a => f74151:sub.a
+d[0] => f74151:sub.d[0]
+d[1] => f74151:sub.d[1]
+d[2] => f74151:sub.d[2]
+d[3] => f74151:sub.d[3]
+d[4] => f74151:sub.d[4]
+d[5] => f74151:sub.d[5]
+d[6] => ~NO_FANOUT~
+d[7] => ~NO_FANOUT~
+gn => f74151:sub.gn
+y <= f74151:sub.y
+wn <= f74151:sub.wn
+
+
+|clock|display:inst5|seg_select:inst2|select1bit:inst3|74151:inst|f74151:sub
+WN <= 85.DB_MAX_OUTPUT_PORT_TYPE
+D0 => 59.IN0
+A => 19.IN0
+D1 => 60.IN0
+B => 17.IN0
+D2 => 61.IN0
+D3 => 62.IN0
+C => 16.IN0
+D4 => 63.IN0
+D5 => 64.IN0
+D6 => 65.IN0
+D7 => 66.IN0
+GN => 13.IN0
+y <= 82.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock|display:inst5|seg_select:inst2|select1bit:inst1
+code <= 74151:inst.Y
+add2 => 74151:inst.C
+add1 => 74151:inst.B
+add0 => 74151:inst.A
+h_ten => 74151:inst.D5
+sec_one => 74151:inst.D0
+sec_ten => 74151:inst.D1
+h_one => 74151:inst.D4
+min_ten => 74151:inst.D3
+min_one => 74151:inst.D2
+
+
+|clock|display:inst5|seg_select:inst2|select1bit:inst1|74151:inst
+c => f74151:sub.c
+b => f74151:sub.b
+a => f74151:sub.a
+d[0] => f74151:sub.d[0]
+d[1] => f74151:sub.d[1]
+d[2] => f74151:sub.d[2]
+d[3] => f74151:sub.d[3]
+d[4] => f74151:sub.d[4]
+d[5] => f74151:sub.d[5]
+d[6] => ~NO_FANOUT~
+d[7] => ~NO_FANOUT~
+gn => f74151:sub.gn
+y <= f74151:sub.y
+wn <= f74151:sub.wn
+
+
+|clock|display:inst5|seg_select:inst2|select1bit:inst1|74151:inst|f74151:sub
+WN <= 85.DB_MAX_OUTPUT_PORT_TYPE
+D0 => 59.IN0
+A => 19.IN0
+D1 => 60.IN0
+B => 17.IN0
+D2 => 61.IN0
+D3 => 62.IN0
+C => 16.IN0
+D4 => 63.IN0
+D5 => 64.IN0
+D6 => 65.IN0
+D7 => 66.IN0
+GN => 13.IN0
+y <= 82.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock|display:inst5|seg_select:inst2|select1bit:inst2
+code <= 74151:inst.Y
+add2 => 74151:inst.C
+add1 => 74151:inst.B
+add0 => 74151:inst.A
+h_ten => 74151:inst.D5
+sec_one => 74151:inst.D0
+sec_ten => 74151:inst.D1
+h_one => 74151:inst.D4
+min_ten => 74151:inst.D3
+min_one => 74151:inst.D2
+
+
+|clock|display:inst5|seg_select:inst2|select1bit:inst2|74151:inst
+c => f74151:sub.c
+b => f74151:sub.b
+a => f74151:sub.a
+d[0] => f74151:sub.d[0]
+d[1] => f74151:sub.d[1]
+d[2] => f74151:sub.d[2]
+d[3] => f74151:sub.d[3]
+d[4] => f74151:sub.d[4]
+d[5] => f74151:sub.d[5]
+d[6] => ~NO_FANOUT~
+d[7] => ~NO_FANOUT~
+gn => f74151:sub.gn
+y <= f74151:sub.y
+wn <= f74151:sub.wn
+
+
+|clock|display:inst5|seg_select:inst2|select1bit:inst2|74151:inst|f74151:sub
+WN <= 85.DB_MAX_OUTPUT_PORT_TYPE
+D0 => 59.IN0
+A => 19.IN0
+D1 => 60.IN0
+B => 17.IN0
+D2 => 61.IN0
+D3 => 62.IN0
+C => 16.IN0
+D4 => 63.IN0
+D5 => 64.IN0
+D6 => 65.IN0
+D7 => 66.IN0
+GN => 13.IN0
+y <= 82.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock|chooseseg:inst132
+timeseg[0] <= inst33.DB_MAX_OUTPUT_PORT_TYPE
+timeseg[1] <= inst32.DB_MAX_OUTPUT_PORT_TYPE
+timeseg[2] <= inst37.DB_MAX_OUTPUT_PORT_TYPE
+timeseg[3] <= inst36.DB_MAX_OUTPUT_PORT_TYPE
+timeseg[4] <= inst38.DB_MAX_OUTPUT_PORT_TYPE
+timeseg[5] <= inst35.DB_MAX_OUTPUT_PORT_TYPE
+timeseg[6] <= inst34.DB_MAX_OUTPUT_PORT_TYPE
+seg2[0] => inst30.IN0
+seg2[1] => inst29.IN0
+seg2[2] => inst28.IN0
+seg2[3] => inst27.IN0
+seg2[4] => inst26.IN0
+seg2[5] => inst25.IN0
+seg2[6] => inst23.IN1
+swi => inst26.IN1
+swi => inst31.IN0
+swi => inst23.IN0
+swi => inst30.IN1
+swi => inst29.IN1
+swi => inst27.IN1
+swi => inst25.IN1
+swi => inst28.IN1
+seg1[0] => inst22.IN0
+seg1[1] => inst21.IN0
+seg1[2] => inst20.IN0
+seg1[3] => inst19.IN0
+seg1[4] => inst18.IN0
+seg1[5] => inst17.IN0
+seg1[6] => inst16.IN1
+
+
